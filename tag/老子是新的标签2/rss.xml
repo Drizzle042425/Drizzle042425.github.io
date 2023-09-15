@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Hexo • Posts by &#34;老子是新的标签2&#34; tag</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Fri, 15 Sep 2023 22:55:06 +0800</pubDate>
+        <lastBuildDate>Fri, 15 Sep 2023 22:55:06 +0800</lastBuildDate>
+        <category>我就是新的标签1</category>
+        <category>老子是新的标签2</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/09/15/Reverse/</guid>
+            <title>Reverse</title>
+            <link>http://example.com/2023/09/15/Reverse/</link>
+            <category>我就是新的标签1</category>
+            <category>老子是新的标签2</category>
+            <pubDate>Fri, 15 Sep 2023 22:55:06 +0800</pubDate>
+            <description><![CDATA[ &lt;hr&gt;
+&lt;hr&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
