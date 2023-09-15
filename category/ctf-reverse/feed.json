@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Hexo • All posts by \"ctf-reverse\" category",
+    "description": "",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2023/09/15/Reverse/",
+            "url": "http://example.com/2023/09/15/Reverse/",
+            "title": "Reverse",
+            "date_published": "2023-09-15T14:55:06.000Z",
+            "content_html": "<hr>\n<hr>\n<p>step1: 下载解压后是 pyc 文件，上网查询在线反编译工具，得到 python 代码.<br>\nstep2:<br>\n 解读 python 代码，上网查询 translate 和 maketrans 的用法，<br>\n① s.translate (table,str) 对字符串 s 移除 str 包含的字符，剩下的字符串按照 table 里的字符映射关系替换。table 可以理解为转换表，比较’a’ -&gt; ‘A’, ‘b’-&gt;‘B’.</p>\n<p>② tabel = string.maketrans (‘s1’, ‘s2’) s1 和 s2 的长度必须一致，maketrans 生成一个转换表，若在 s 中有 s1，则替换为 s2，这个转换表是字符字符一个个对应的，没必要全部包含。<br>\n原文链接：</p>\n<p>[<span class=\"exturl\" data-url=\"aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNDA3OTMwNy9hcnRpY2xlL2RldGFpbHMvMTE0OTM4OTUw\">https://blog.csdn.net/weixin_34079307/article/details/114938950</span>]:</p>\n<p>step3: 所以源代码表示的就是讲 enc_flag 按照（string1，string2）的转换表，把 str1 进行转换<br>\n step4：最后进行 base64 解码得到答案</p>\n",
+            "tags": [
+                "reverse",
+                "西电ctf"
+            ]
+        }
+    ]
+}

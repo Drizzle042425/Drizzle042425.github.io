@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Hexo • Posts by &#34;reverse&#34; tag</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Fri, 15 Sep 2023 22:55:06 +0800</pubDate>
+        <lastBuildDate>Fri, 15 Sep 2023 22:55:06 +0800</lastBuildDate>
+        <category>reverse</category>
+        <category>西电ctf</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/09/15/Reverse/</guid>
+            <title>Reverse</title>
+            <link>http://example.com/2023/09/15/Reverse/</link>
+            <category>reverse</category>
+            <category>西电ctf</category>
+            <pubDate>Fri, 15 Sep 2023 22:55:06 +0800</pubDate>
+            <description><![CDATA[ &lt;hr&gt;
+&lt;hr&gt;
+&lt;p&gt;step1: 下载解压后是 pyc 文件，上网查询在线反编译工具，得到 python 代码.&lt;br&gt;
+step2:&lt;br&gt;
+ 解读 python 代码，上网查询 translate 和 maketrans 的用法，&lt;br&gt;
+① s.translate (table,str) 对字符串 s 移除 str 包含的字符，剩下的字符串按照 table 里的字符映射关系替换。table 可以理解为转换表，比较’a’ -&amp;gt; ‘A’, ‘b’-&amp;gt;‘B’.&lt;/p&gt;
+&lt;p&gt;② tabel = string.maketrans (‘s1’, ‘s2’) s1 和 s2 的长度必须一致，maketrans 生成一个转换表，若在 s 中有 s1，则替换为 s2，这个转换表是字符字符一个个对应的，没必要全部包含。&lt;br&gt;
+原文链接：&lt;/p&gt;
+&lt;p&gt;[&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNDA3OTMwNy9hcnRpY2xlL2RldGFpbHMvMTE0OTM4OTUw&#34;&gt;https://blog.csdn.net/weixin_34079307/article/details/114938950&lt;/span&gt;]:&lt;/p&gt;
+&lt;p&gt;step3: 所以源代码表示的就是讲 enc_flag 按照（string1，string2）的转换表，把 str1 进行转换&lt;br&gt;
+ step4：最后进行 base64 解码得到答案&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
