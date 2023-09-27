@@ -5,6 +5,28 @@
     "home_page_url": "http://example.com",
     "items": [
         {
+            "id": "http://example.com/2023/09/27/MoeCTF/MoeCTF-WP/",
+            "url": "http://example.com/2023/09/27/MoeCTF/MoeCTF-WP/",
+            "title": "MoeCTF-WEB",
+            "date_published": "2023-09-27T14:55:06.000Z",
+            "content_html": "<hr>\n<hr>\n<p>MoeCTF-WEB</p>\n<p>1.http</p>\n<p>2.Web 入门之北</p>\n<p>3. 彼岸的 flag</p>\n<p>4.cookie</p>\n<p>1️⃣下载题目给的附件：<img data-src=\"./MoeCTF/a.jpg\" alt=\"图片\"></p>\n<p>大概意思就是先注册然后登录获取 flag</p>\n<p>2️⃣注册一个账号</p>\n<p><img data-src=\"D:%5Cblog%5Cmyblog%5Csource_posts%5CMoeCTF-WP.assets%5Cimage-20230927222545007.png\" alt=\"image-20230927222545007\"></p>\n<p>我注册的是</p>\n<p>{<br>\n“username”:“abc”,<br>\n“password”:“123456”<br>\n}</p>\n<p>因为之前注册过了，所以显示已存在</p>\n<p>3️⃣登录账号</p>\n<p><img data-src=\"D:%5Cblog%5Cmyblog%5Csource_posts%5CMoeCTF-WP.assets%5Cimage-20230927222826795.png\" alt=\"image-20230927222826795\"></p>\n<p>可以发现有个 token，是 base64 加密的，拿去解密看看</p>\n<p><img data-src=\"D:%5Cblog%5Cmyblog%5Csource_posts%5CMoeCTF-WP.assets%5Cimage-20230927222925819.png\" alt=\"image-20230927222925819\"></p>\n<p>可以发现我们角色是 user，咱们改成 admin 再进行 base64 加密作为 token，再发包</p>\n<p><img data-src=\"D:%5Cblog%5Cmyblog%5Csource_posts%5CMoeCTF-WP.assets%5Cimage-20230927223152265.png\" alt=\"image-20230927223152265\"></p>\n<p>得到 flag</p>\n",
+            "tags": [
+                "reverse",
+                "西电ctf"
+            ]
+        },
+        {
+            "id": "http://example.com/2023/09/23/%E8%8F%9C%E7%8B%97%E6%9D%AFweb-WP/",
+            "url": "http://example.com/2023/09/23/%E8%8F%9C%E7%8B%97%E6%9D%AFweb-WP/",
+            "title": "菜狗杯WEB",
+            "date_published": "2023-09-23T14:55:06.000Z",
+            "content_html": "<hr>\n<hr>\n<p>菜狗杯 web-WP</p>\n<p>1.web 签到</p>\n",
+            "tags": [
+                "web",
+                "菜狗杯ctf"
+            ]
+        },
+        {
             "id": "http://example.com/2023/09/15/Reverse/",
             "url": "http://example.com/2023/09/15/Reverse/",
             "title": "Reverse",

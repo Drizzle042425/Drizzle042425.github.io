@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>Hexo • Posts by &#34;web&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2023-09-23T14:55:06.000Z</updated>
+    <category term="reverse" />
+    <category term="西电ctf" />
+    <category term="web" />
+    <category term="菜狗杯ctf" />
+    <entry>
+        <id>http://example.com/2023/09/23/%E8%8F%9C%E7%8B%97%E6%9D%AFweb-WP/</id>
+        <title>菜狗杯WEB</title>
+        <link rel="alternate" href="http://example.com/2023/09/23/%E8%8F%9C%E7%8B%97%E6%9D%AFweb-WP/"/>
+        <content type="html">&lt;hr&gt;
+&lt;hr&gt;
+&lt;p&gt;菜狗杯 web-WP&lt;/p&gt;
+&lt;p&gt;1.web 签到&lt;/p&gt;
+</content>
+        <category term="web" />
+        <category term="菜狗杯ctf" />
+        <updated>2023-09-23T14:55:06.000Z</updated>
+    </entry>
+</feed>
