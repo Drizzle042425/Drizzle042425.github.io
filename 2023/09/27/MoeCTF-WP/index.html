@@ -1,0 +1,549 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Hexo" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Hexo" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="Hexo" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="reverse,西电ctf" />
+
+
+<link rel="canonical" href="http://example.com/2023/09/27/MoeCTF-WP/">
+
+
+
+  <title>
+MoeCTF-WEB - CTF-WEB |
+Drizzle的狗窝 = Hexo</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">MoeCTF-WEB
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2023-09-27 22:55:06">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-09-27T22:55:06+08:00">2023-09-27</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>3.9k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>4 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Drizzle的狗窝</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclimtf7dj20zk0m8qav.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipetfk5zwj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipevarprfj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipetlbztpj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicit4jrvuj20zk0m8785.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF-WEB/" itemprop="item" rel="index" title="分类于 CTF-WEB"><span itemprop="name">CTF-WEB</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/27/MoeCTF-WP/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Drizzle">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <hr>
+<hr>
+<h1 id="moectf-web"><a class="markdownIt-Anchor" href="#moectf-web">#</a> MoeCTF-WEB</h1>
+<h2 id="1http"><a class="markdownIt-Anchor" href="#1http">#</a> 1.http</h2>
+<p>按题如图：</p>
+<p><img data-src="https://s2.loli.net/2023/09/30/9VQHclbSwBLZETR.png" alt="图片.png"></p>
+<h2 id="2web入门指北"><a class="markdownIt-Anchor" href="#2web入门指北">#</a> 2.Web 入门指北</h2>
+<p>解压后发现编码后是这样一个数字：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>666</mn><mi>c</mi><mn>61673</mn><mi>d</mi><mn>6257396</mn><mi>c</mi><mn>5933526</mn><mi>d</mi><mn>6533637</mn><mi>a</mi><mn>62454</mn><mi>e</mi><mn>7662575666564739666257396</mn><mi>c</mi><mn>5131524758316379596</mn><mi>c</mi><mn>396</mn><mi>a</mi><mn>61474673624756755</mn><mi>a</mi><mn>3055684958303</mn><mi>d</mi></mrow><annotation encoding="application/x-tex">666c61673d6257396c5933526d6533637a62454e7662575666564739666257396c5131524758316379596c396a61474673624756755a3055684958303d
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord">6</span><span class="mord">6</span><span class="mord mathnormal">c</span><span class="mord">6</span><span class="mord">1</span><span class="mord">6</span><span class="mord">7</span><span class="mord">3</span><span class="mord mathnormal">d</span><span class="mord">6</span><span class="mord">2</span><span class="mord">5</span><span class="mord">7</span><span class="mord">3</span><span class="mord">9</span><span class="mord">6</span><span class="mord mathnormal">c</span><span class="mord">5</span><span class="mord">9</span><span class="mord">3</span><span class="mord">3</span><span class="mord">5</span><span class="mord">2</span><span class="mord">6</span><span class="mord mathnormal">d</span><span class="mord">6</span><span class="mord">5</span><span class="mord">3</span><span class="mord">3</span><span class="mord">6</span><span class="mord">3</span><span class="mord">7</span><span class="mord mathnormal">a</span><span class="mord">6</span><span class="mord">2</span><span class="mord">4</span><span class="mord">5</span><span class="mord">4</span><span class="mord mathnormal">e</span><span class="mord">7</span><span class="mord">6</span><span class="mord">6</span><span class="mord">2</span><span class="mord">5</span><span class="mord">7</span><span class="mord">5</span><span class="mord">6</span><span class="mord">6</span><span class="mord">6</span><span class="mord">5</span><span class="mord">6</span><span class="mord">4</span><span class="mord">7</span><span class="mord">3</span><span class="mord">9</span><span class="mord">6</span><span class="mord">6</span><span class="mord">6</span><span class="mord">2</span><span class="mord">5</span><span class="mord">7</span><span class="mord">3</span><span class="mord">9</span><span class="mord">6</span><span class="mord mathnormal">c</span><span class="mord">5</span><span class="mord">1</span><span class="mord">3</span><span class="mord">1</span><span class="mord">5</span><span class="mord">2</span><span class="mord">4</span><span class="mord">7</span><span class="mord">5</span><span class="mord">8</span><span class="mord">3</span><span class="mord">1</span><span class="mord">6</span><span class="mord">3</span><span class="mord">7</span><span class="mord">9</span><span class="mord">5</span><span class="mord">9</span><span class="mord">6</span><span class="mord mathnormal">c</span><span class="mord">3</span><span class="mord">9</span><span class="mord">6</span><span class="mord mathnormal">a</span><span class="mord">6</span><span class="mord">1</span><span class="mord">4</span><span class="mord">7</span><span class="mord">4</span><span class="mord">6</span><span class="mord">7</span><span class="mord">3</span><span class="mord">6</span><span class="mord">2</span><span class="mord">4</span><span class="mord">7</span><span class="mord">5</span><span class="mord">6</span><span class="mord">7</span><span class="mord">5</span><span class="mord">5</span><span class="mord mathnormal">a</span><span class="mord">3</span><span class="mord">0</span><span class="mord">5</span><span class="mord">5</span><span class="mord">6</span><span class="mord">8</span><span class="mord">4</span><span class="mord">9</span><span class="mord">5</span><span class="mord">8</span><span class="mord">3</span><span class="mord">0</span><span class="mord">3</span><span class="mord mathnormal">d</span></span></span></span></span></p>
+<p>拿去 cyberchef 解码</p>
+<p>先用 hex 再用 base64</p>
+<p><img data-src="https://s2.loli.net/2023/09/30/cQajmFsqdounZJH.png" alt="图片.png"></p>
+<p><img data-src="https://s2.loli.net/2023/09/30/HiucnpXr1b3Texq.png" alt="图片.png"></p>
+<p>得到答案</p>
+<h2 id="3彼岸的flag"><a class="markdownIt-Anchor" href="#3彼岸的flag">#</a> 3. 彼岸的 flag</h2>
+<p>打开源码搜 moectf</p>
+<p><img data-src="https://s2.loli.net/2023/09/30/KeEgymxNM64CsfY.png" alt="图片.png"></p>
+<h2 id="4cookie"><a class="markdownIt-Anchor" href="#4cookie">#</a> 4.cookie</h2>
+<p>1️⃣下载题目给的附件：</p>
+<p><img data-src="https://s2.loli.net/2023/09/28/IABm2jhir3nZ4vU.png" alt="图片.png"></p>
+<p>大概意思就是先注册然后登录获取 flag</p>
+<p>2️⃣注册一个账号</p>
+<p><img data-src="https://s2.loli.net/2023/09/28/7NBmHjczpxORaAW.png" alt="图片.png"></p>
+<p>我注册的是</p>
+<p>{<br>
+“username”:“abc”,<br>
+“password”:“123456”<br>
+}</p>
+<p>因为之前注册过了，所以显示已存在</p>
+<p>3️⃣登录账号</p>
+<p><img data-src="https://s2.loli.net/2023/09/28/HKolMYNTj4tc83B.png" alt="image-20230927222826795.png"></p>
+<p>可以发现有个 token，是 base64 加密的，拿去解密看看</p>
+<p><img data-src="https://s2.loli.net/2023/09/28/2AKbHRIC5zq693l.png" alt="图片.png"></p>
+<p>可以发现我们角色是 user，咱们改成 admin 再进行 base64 加密作为 token，再发包</p>
+<p><img data-src="https://s2.loli.net/2023/09/28/tpZk8FN1ioDVhIH.png" alt="图片.png"></p>
+<p>得到 flag</p>
+<h2 id="5gasgasgas"><a class="markdownIt-Anchor" href="#5gasgasgas">#</a> 5.gas!gas!gas!</h2>
+<p>根据题目信息，编写 python 脚本来处理方向控制和油门控制的选择，并快速提交，注意处理 Session 信息。一次不成功可以多尝试几次</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">import requests<br>import re<br>url = &#x27;http://localhost:50727/&#x27;<br>headers = &#123;&quot;Content-Type&quot;:&quot;application/x-www-form-urlencoded&quot;&#125;<br>s = requests.Session()<br>req_post = s.post(<br>    url=url,<br>    data=&#x27;driver=q1&amp;steering_control=0&amp;throttle=2&#x27;,<br>    headers=headers)<br>print(f&#x27;cookies = &#123;s.cookies&#125;&#x27;)<br>post_data = &#x27;driver=q1jun&amp;steering_control=0&amp;throttle=2&#x27;<br>print(re.findall(r&#x27;&lt;h3&gt;&lt;font color=&quot;red&quot;&gt;(.*)&lt;/font&gt;&lt;/h3&gt;&lt;/div&gt;&#x27;,req_post.text)[0])<br>req = req_post.text<br>steering_control = 0<br>throttle = 0<br>for _ in range(7):<br>    if &#x27;弯道向左&#x27; in req_post.text:<br>        steering_control = 1<br>    if &#x27;弯道向右&#x27; in req_post.text:<br>        steering_control = -1<br>    if &#x27;弯道直行&#x27; in req_post.text:<br>        steering_control = 0<br>    if &#x27;保持这个速度&#x27; in req_post.text:<br>        throttle = 1<br>    if &#x27;抓地力太大了&#x27; in req_post.text:<br>        throttle = 2<br>    if &#x27;抓地力太小了&#x27; in req_post.text:<br>        throttle = 0<br>    print(f&#x27;&#123;steering_control =&#125;&#x27;)<br>    print(f&#x27;&#123;throttle =&#125;&#x27;)<br>    req_post = s.post(<br>        url=url,<br>        data=f&#x27;driver=q1&amp;steering_control=&#123;steering_control&#125;&amp;throttle=&#123;throttle&#125;&#x27;,<br>        headers=headers<br>    )<br>    print(req_post.text)<br>    print(re.findall(r&#x27;&lt;h3&gt;&lt;font color=&quot;red&quot;&gt;(.*)&lt;/font&gt;&lt;/h3&gt;&lt;/div&gt;&#x27;,req_post.text)[0])<br>    print(f&#x27;cookies = &#123;s.cookies&#125;&#x27;)<br></code></pre></td></tr></table></figure>
+<p><img data-src="https://s2.loli.net/2023/10/06/HFEdgPcTGLsCURk.png" alt="图片.png"></p>
+<h2 id="6moe图床"><a class="markdownIt-Anchor" href="#6moe图床">#</a> 6.moe 图床</h2>
+<p>观察网页源代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>    &lt;meta charset=&quot;utf-8&quot;&gt;<br>    &lt;title&gt;moe图床&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>    &lt;input type=&quot;file&quot; id=&quot;fileInput&quot;&gt;<br>    &lt;button onclick=&quot;uploadFile()&quot;&gt;上传&lt;/button&gt;<br>    &lt;div id=&quot;uploadResult&quot;&gt;&lt;/div&gt;<br>    &lt;script&gt;<br>        function uploadFile() &#123;<br>            const fileInput = document.getElementById(&#x27;fileInput&#x27;);<br>            const file = fileInput.files[0];<br>            <br>            if (!file) &#123;<br>                alert(&#x27;请选择一个文件进行上传！&#x27;);<br>                return;<br>            &#125;<br>            <br>            const allowedExtensions = [&#x27;png&#x27;];<br>            const fileExtension = file.name.split(&#x27;.&#x27;).pop().toLowerCase();<br>            if (!allowedExtensions.includes(fileExtension)) &#123;<br>                alert(&#x27;只允许上传后缀名为png的文件！&#x27;);<br>                return;<br>            &#125;<br>            <br>            const formData = new FormData();<br>            formData.append(&#x27;file&#x27;, file);<br><br>            fetch(&#x27;upload.php&#x27;, &#123;<br>                method: &#x27;POST&#x27;,<br>                body: formData<br>            &#125;)<br>            .then(response =&gt; response.json())<br>            .then(result =&gt; &#123;<br>                if (result.success) &#123;<br>                    const uploadResult = document.getElementById(&#x27;uploadResult&#x27;);<br>                    const para = document.createElement(&#x27;p&#x27;);<br>                    para.textContent = (&#x27;地址：&#x27;);<br>                    const link = document.createElement(&#x27;a&#x27;);<br>                    link.textContent = result.file_path;<br>                    link.href = result.file_path;<br>                    link.target = &#x27;_blank&#x27;;<br>                    para.append(link);<br>                    uploadResult.appendChild(para);<br><br>                    alert(&#x27;文件上传成功！&#x27;);<br>                &#125; else &#123;<br>                    alert(&#x27;文件上传失败：&#x27; + result.message);<br>                &#125;<br>            &#125;)<br>            .catch(error =&gt; &#123;<br>                console.error(&#x27;文件上传失败:&#x27;, error);<br>            &#125;);<br>        &#125;<br>    &lt;/script&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
+<p>可以发现只允许上传.png 后缀名的文件</p>
+<p>利用 burpsuite 抓包可以修改文件类型</p>
+<p>先随便上传一个符合上传格式的 png 文件，再修改数据包内容</p>
+<p><img data-src="https://s2.loli.net/2023/10/06/koRPuA2ilOpjeMm.png" alt="图片.png"></p>
+<p>此时我们要将文件名 filename 改为包含.png 的文件</p>
+<p>我这里写的 shell.php.png.php 脚本的内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?php system(&#x27;cat /flag&#x27;);?&gt;<br></code></pre></td></tr></table></figure>
+<p>上传成功后，访问文件：</p>
+<p><img data-src="https://s2.loli.net/2023/10/06/xXmeVH73BDRwd2a.png" alt="图片.png"></p>
+
+      <div class="tags">
+          <a href="/tags/reverse/" rel="tag"><i class="ic i-tag"></i> reverse</a>
+          <a href="/tags/%E8%A5%BF%E7%94%B5ctf/" rel="tag"><i class="ic i-tag"></i> 西电ctf</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2023-10-06 19:14:47" itemprop="dateModified" datetime="2023-10-06T19:14:47+08:00">2023-10-06</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Drizzle 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="Drizzle 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="Drizzle 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Drizzle <i class="ic i-at"><em>@</em></i>Hexo
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2023/09/27/MoeCTF-WP/" title="MoeCTF-WEB">http://example.com/2023/09/27/MoeCTF-WP/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/09/23/%E8%8F%9C%E7%8B%97%E6%9D%AFweb-WP/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giph4wqtg4j20zk0m8x6p.jpg" title="菜狗杯WEB">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> CTF-WEB</span>
+  <h3>菜狗杯WEB</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#moectf-web"><span class="toc-number">1.</span> <span class="toc-text"> MoeCTF-WEB</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1http"><span class="toc-number">1.1.</span> <span class="toc-text"> 1.http</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2web%E5%85%A5%E9%97%A8%E6%8C%87%E5%8C%97"><span class="toc-number">1.2.</span> <span class="toc-text"> 2.Web 入门指北</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E5%BD%BC%E5%B2%B8%E7%9A%84flag"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. 彼岸的 flag</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4cookie"><span class="toc-number">1.4.</span> <span class="toc-text"> 4.cookie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5gasgasgas"><span class="toc-number">1.5.</span> <span class="toc-text"> 5.gas!gas!gas!</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6moe%E5%9B%BE%E5%BA%8A"><span class="toc-number">1.6.</span> <span class="toc-text"> 6.moe 图床</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2023/09/23/%E8%8F%9C%E7%8B%97%E6%9D%AFweb-WP/" rel="bookmark" title="菜狗杯WEB">菜狗杯WEB</a></li><li class="active"><a href="/2023/09/27/MoeCTF-WP/" rel="bookmark" title="MoeCTF-WEB">MoeCTF-WEB</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Drizzle"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Drizzle</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">4</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">2</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">4</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0RyaXp6bGUwNDI0MjU=" title="https:&#x2F;&#x2F;github.com&#x2F;Drizzle042425"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-user"></i>关于</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>aboutsite</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/admiration/" rel="section"><i class="ic i-coffee"></i>admiration</a>
+  </li>
+
+  </ul>
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF-WEB/" title="分类于 CTF-WEB">CTF-WEB</a>
+</div>
+
+    <span><a href="/2023/09/23/%E8%8F%9C%E7%8B%97%E6%9D%AFweb-WP/" title="菜狗杯WEB">菜狗杯WEB</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF-reverse/" title="分类于 CTF-reverse">CTF-reverse</a>
+</div>
+
+    <span><a href="/2023/09/15/Reverse/" title="Reverse">Reverse</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/09/14/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF-WEB/" title="分类于 CTF-WEB">CTF-WEB</a>
+</div>
+
+    <span><a href="/2023/09/27/MoeCTF-WP/" title="MoeCTF-WEB">MoeCTF-WEB</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2022 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Drizzle @ Drizzle的狗窝</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">5k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">4 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/09/27/MoeCTF-WP/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,audio: [{"title":"列表1","list":["https://music.163.com/#/playlist?id=2943811283","https://music.163.com/#/playlist?id=2297706586"]}],fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
