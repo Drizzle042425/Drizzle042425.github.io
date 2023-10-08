@@ -24,15 +24,15 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="reverse,西电ctf" />
+  <meta name="keywords" content="android studio,安卓开发" />
 
 
-<link rel="canonical" href="http://example.com/2023/09/15/Reverse/">
+<link rel="canonical" href="http://example.com/2023/10/08/abc/">
 
 
 
   <title>
-Reverse - CTF-reverse |
+abc |
 Drizzle的狗窝 = Hexo</title>
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,23 +60,23 @@ Drizzle的狗窝 = Hexo</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">Reverse
+  <h1 itemprop="name headline">abc
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2023-09-15 22:55:06">
+  <span class="item" title="创建时间：2023-10-08 10:31:11">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2023-09-15T22:55:06+08:00">2023-09-15</time>
+    <time itemprop="dateCreated datePublished" datetime="2023-10-08T10:31:11+08:00">2023-10-08</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>443</span>
+    <span>9</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -117,12 +117,12 @@ Drizzle的狗窝 = Hexo</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciuja1j1j20zk0m8kjl.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeyhsblkj20zk0m81kx.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeyonbf9j20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitspjpbj20zk0m81ky.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitf0kl1j20zk0m87fe.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipetfk5zwj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giph4fomxoj20zk0m8axp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicliierfjj20zk0m8npd.jpg"></li>
         </ul>
       </div>
     </header>
@@ -147,13 +147,11 @@ Drizzle的狗窝 = Hexo</title>
     
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
-<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF-reverse/" itemprop="item" rel="index" title="分类于 CTF-reverse"><span itemprop="name">CTF-reverse</span></a>
-<meta itemprop="position" content="1" /></span>
+<span><a href="/">首页</a></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/15/Reverse/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/08/abc/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
@@ -168,21 +166,11 @@ Drizzle的狗窝 = Hexo</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <hr>
-<hr>
-<p>step1: 下载解压后是 pyc 文件，上网查询在线反编译工具，得到 python 代码.<br>
-step2:<br>
- 解读 python 代码，上网查询 translate 和 maketrans 的用法，<br>
-① s.translate (table,str) 对字符串 s 移除 str 包含的字符，剩下的字符串按照 table 里的字符映射关系替换。table 可以理解为转换表，比较’a’ -&gt; ‘A’, ‘b’-&gt;‘B’.</p>
-<p>② tabel = string.maketrans (‘s1’, ‘s2’) s1 和 s2 的长度必须一致，maketrans 生成一个转换表，若在 s 中有 s1，则替换为 s2，这个转换表是字符字符一个个对应的，没必要全部包含。<br>
-原文链接：</p>
-<p>[<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNDA3OTMwNy9hcnRpY2xlL2RldGFpbHMvMTE0OTM4OTUw">https://blog.csdn.net/weixin_34079307/article/details/114938950</span>]:</p>
-<p>step3: 所以源代码表示的就是讲 enc_flag 按照（string1，string2）的转换表，把 str1 进行转换<br>
- step4：最后进行 base64 解码得到答案</p>
+    <p>AS 制作类微信界面</p>
 
       <div class="tags">
-          <a href="/tags/reverse/" rel="tag"><i class="ic i-tag"></i> reverse</a>
-          <a href="/tags/%E8%A5%BF%E7%94%B5ctf/" rel="tag"><i class="ic i-tag"></i> 西电ctf</a>
+          <a href="/tags/android-studio/" rel="tag"><i class="ic i-tag"></i> android studio</a>
+          <a href="/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/" rel="tag"><i class="ic i-tag"></i> 安卓开发</a>
       </div>
   </div>
 
@@ -194,7 +182,7 @@ step2:<br>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2023-09-15 23:55:29" itemprop="dateModified" datetime="2023-09-15T23:55:29+08:00">2023-09-15</time>
+    <time title="修改时间：2023-10-08 10:33:11" itemprop="dateModified" datetime="2023-10-08T10:33:11+08:00">2023-10-08</time>
   </span>
 </div>
 
@@ -230,7 +218,7 @@ step2:<br>
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2023/09/15/Reverse/" title="Reverse">http://example.com/2023/09/15/Reverse/</a>
+    <a href="http://example.com/2023/10/08/abc/" title="abc">http://example.com/2023/10/08/abc/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -249,22 +237,14 @@ step2:<br>
     <div class="item left">
       
 
-  <a href="/2023/09/14/hello-world/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipesx5fdwj20zk0m81kx.jpg" title="Hello World">
+  <a href="/2023/10/07/AS%E5%88%B6%E4%BD%9C%E7%AE%80%E6%98%93%E5%BE%AE%E4%BF%A1/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclxfdlttj20zk0m8npd.jpg" title="AS制作简易微信">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>Hello World</h3>
+  <span class="category"><i class="ic i-flag"></i> 移动开发实验</span>
+  <h3>AS制作简易微信</h3>
   </a>
 
     </div>
     <div class="item right">
-      
-
-  <a href="/2023/09/23/%E8%8F%9C%E7%8B%97%E6%9D%AFweb-WP/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclxfdlttj20zk0m8npd.jpg" title="菜狗杯WEB">
-  <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> CTF-WEB</span>
-  <h3>菜狗杯WEB</h3>
-  </a>
-
     </div>
 </div>
 
@@ -283,9 +263,6 @@ step2:<br>
       <div class="contents panel pjax" data-title="文章目录">
       </div>
       <div class="related panel pjax" data-title="系列文章">
-        <ul>
-          <li class="active"><a href="/2023/09/15/Reverse/" rel="bookmark" title="Reverse">Reverse</a></li>
-        </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
         <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -378,12 +355,10 @@ step2:<br>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2023/09/14/hello-world/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2023/09/23/%E8%8F%9C%E7%8B%97%E6%9D%AFweb-WP/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -405,9 +380,10 @@ step2:<br>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/CTF-WEB/" title="分类于 CTF-WEB">CTF-WEB</a>
 </div>
 
-    <span><a href="/2023/10/08/abc/" title="abc">abc</a></span>
+    <span><a href="/2023/09/27/MoeCTF-WP/" title="MoeCTF-WEB">MoeCTF-WEB</a></span>
   </li>
 
       
@@ -424,6 +400,24 @@ step2:<br>
   <li class="item">
     
 <div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/09/14/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/10/08/abc/" title="abc">abc</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/CTF-WEB/" title="分类于 CTF-WEB">CTF-WEB</a>
 </div>
 
@@ -434,29 +428,10 @@ step2:<br>
   <li class="item">
     
 <div class="breadcrumb">
-</div>
-
-    <span><a href="/2023/09/14/hello-world/" title="Hello World">Hello World</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/CTF-reverse/" title="分类于 CTF-reverse">CTF-reverse</a>
 </div>
 
     <span><a href="/2023/09/15/Reverse/" title="Reverse">Reverse</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF-WEB/" title="分类于 CTF-WEB">CTF-WEB</a>
-</div>
-
-    <span><a href="/2023/09/27/MoeCTF-WP/" title="MoeCTF-WEB">MoeCTF-WEB</a></span>
   </li>
 
   </ul>
@@ -499,7 +474,7 @@ step2:<br>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2023/09/15/Reverse/',
+    path: '2023/10/08/abc/',
     favicon: {
       show: "（●´3｀●）やれやれだぜ",
       hide: "(´Д｀)大変だ！"
