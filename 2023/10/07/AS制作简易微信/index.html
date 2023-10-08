@@ -1,0 +1,586 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Hexo" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Hexo" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="Hexo" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="android studio,安卓开发" />
+
+
+<link rel="canonical" href="http://example.com/2023/10/07/AS%E5%88%B6%E4%BD%9C%E7%AE%80%E6%98%93%E5%BE%AE%E4%BF%A1/">
+
+
+
+  <title>
+AS制作简易微信 - 移动开发实验 |
+Drizzle的狗窝 = Hexo</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">AS制作简易微信
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2023-10-07 23:28:43">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-10-07T23:28:43+08:00">2023-10-07</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>11k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>10 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Drizzle的狗窝</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipevgoki5j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicliierfjj20zk0m8npd.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E9%AA%8C/" itemprop="item" rel="index" title="分类于 移动开发实验"><span itemprop="name">移动开发实验</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/07/AS%E5%88%B6%E4%BD%9C%E7%AE%80%E6%98%93%E5%BE%AE%E4%BF%A1/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Drizzle">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <hr>
+<hr>
+<h1 id="as-制作简易微信"><a class="markdownIt-Anchor" href="#as-制作简易微信">#</a> AS 制作简易微信</h1>
+<h2 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的">#</a> 实验目的</h2>
+<p>利用 android studio 制作一个类微信页面的框架，包含上中下布局，四个 tab 页面，点击底部按钮实现跳转功能</p>
+<h2 id="实验过程"><a class="markdownIt-Anchor" href="#实验过程">#</a> 实验过程</h2>
+<h3 id="基本框架实现"><a class="markdownIt-Anchor" href="#基本框架实现">#</a> 基本框架实现</h3>
+<p>准备工作：导入所需图片到 drawable 目录下：</p>
+<p><img data-src="https://s2.loli.net/2023/10/07/Zx3UX21GiCYcarI.png" alt="图片.png"></p>
+<p>基本框架 xml 分为四部分：top，bottom，四个 tab 页面和一个 main_activity</p>
+<h4 id="top栏设计"><a class="markdownIt-Anchor" href="#top栏设计">#</a> top 栏设计</h4>
+<p>如图：</p>
+<p><img data-src="https://s2.loli.net/2023/10/07/Vs8okZmCPhwAKgJ.png" alt="图片.png"></p>
+<p>代码</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;50dp&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@color/black&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span><br><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/textView&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;1&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@color/black&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center_horizontal&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;微信&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:textColor</span>=<span class="hljs-string">&quot;@color/white&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;40sp&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">TextView</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h4 id="bottom栏"><a class="markdownIt-Anchor" href="#bottom栏">#</a> bottom 栏</h4>
+<p>如图：</p>
+<p><img data-src="https://s2.loli.net/2023/10/07/RqjUpSaHdohVv1G.png" alt="图片.png"></p>
+<p>代码：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;horizontal&quot;</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/chat&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;100dp&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;80dp&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:contentDescription</span>=<span class="hljs-string">&quot;@string/app_name&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:onClick</span>=<span class="hljs-string">&quot;onClick&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/imageView1&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;50dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@color/black&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">app:srcCompat</span>=<span class="hljs-string">&quot;@drawable/a&quot;</span> /&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;60dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;1&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@color/black&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;微信&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:textColor</span>=<span class="hljs-string">&quot;@color/white&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;20dp&quot;</span>/&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/friend&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;100dp&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;80dp&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:contentDescription</span>=<span class="hljs-string">&quot;@string/app_name&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:onClick</span>=<span class="hljs-string">&quot;onClick&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/imageView2&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;51dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@color/black&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">app:srcCompat</span>=<span class="hljs-string">&quot;@drawable/b&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;60dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;1&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@color/black&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;联系人&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:textColor</span>=<span class="hljs-string">&quot;@color/white&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;20dp&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/finding&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;100dp&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;80dp&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:contentDescription</span>=<span class="hljs-string">&quot;@string/app_name&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:onClick</span>=<span class="hljs-string">&quot;onClick&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/imageView3&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@color/black&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">app:srcCompat</span>=<span class="hljs-string">&quot;@drawable/c&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;60dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;1&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@color/black&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;发现&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:textColor</span>=<span class="hljs-string">&quot;@color/white&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;20dp&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/setting&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;100dp&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;80dp&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:contentDescription</span>=<span class="hljs-string">&quot;@string/app_name&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:onClick</span>=<span class="hljs-string">&quot;onClick&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/imageView4&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;110dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@color/black&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">app:srcCompat</span>=<span class="hljs-string">&quot;@drawable/d&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;60dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;1&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@color/black&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;设置&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:textColor</span>=<span class="hljs-string">&quot;@color/white&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;20dp&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h4 id="tab页面"><a class="markdownIt-Anchor" href="#tab页面">#</a> tab 页面</h4>
+<p>在用户点击页面时会显示对应的页面，这里只展示一个，其余三个类似</p>
+<p>如图：</p>
+<p><img data-src="https://s2.loli.net/2023/10/07/tKlXxViq6apufsj.png" alt="图片.png"></p>
+<p>代码：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">FrameLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">&quot;http://schemas.android.com/tools&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">tools:context</span>=<span class="hljs-string">&quot;.Fragment1&quot;</span>&gt;</span><br><br>    <span class="hljs-comment">&lt;!-- <span class="hljs-doctag">TODO:</span> Update blank fragment layout --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/tab01&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;这是微信&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;35sp&quot;</span> /&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">FrameLayout</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h4 id="main-activity"><a class="markdownIt-Anchor" href="#main-activity">#</a> main-activity</h4>
+<p>通过 main_activity 文件将 top,bottom 两个文件添加到一起</p>
+<p>如图：</p>
+<p><img data-src="https://s2.loli.net/2023/10/08/qrTvdBXAWmEMnR8.png" alt="图片.png"></p>
+<p>代码：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span><br><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">layout</span>=<span class="hljs-string">&quot;@layout/top&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>/&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">FrameLayout</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;0dp&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">FrameLayout</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">layout</span>=<span class="hljs-string">&quot;@layout/buttom&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="切换效果的实现"><a class="markdownIt-Anchor" href="#切换效果的实现">#</a> 切换效果的实现</h3>
+<p>要想实现点击切换的效果，需要 fragmentmanager 来对四个不同的 tab 进行控制，让他们叠加在一起的同时，实现在不同的点击动作发生时进行一个 tab 的显示及其余三个的隐藏。</p>
+<h4 id="fragment类"><a class="markdownIt-Anchor" href="#fragment类">#</a> fragment 类</h4>
+<p>创建四个 fragment，对应四个事件，这里只展示一个，其余三个类似</p>
+<p>如图：</p>
+<p><img data-src="https://s2.loli.net/2023/10/08/bTULVQxdK3HiOoz.png" alt="图片.png"></p>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.example.mychat;<br><br><span class="hljs-keyword">import</span> android.os.Bundle;<br><br><span class="hljs-keyword">import</span> androidx.fragment.app.Fragment;<br><br><span class="hljs-keyword">import</span> android.view.LayoutInflater;<br><span class="hljs-keyword">import</span> android.view.View;<br><span class="hljs-keyword">import</span> android.view.ViewGroup;<br><br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Fragment1</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Fragment</span> &#123;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> View <span class="hljs-title function_">onCreateView</span><span class="hljs-params">(LayoutInflater inflater, ViewGroup container,</span><br><span class="hljs-params">                             Bundle savedInstanceState)</span> &#123;<br>        <span class="hljs-comment">// Inflate the layout for this fragment</span><br>        <span class="hljs-keyword">return</span> inflater.inflate(R.layout.tab01, container, <span class="hljs-literal">false</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="mainactivity"><a class="markdownIt-Anchor" href="#mainactivity">#</a> MainActivity</h4>
+<p>主函数主要的功能是实现</p>
+<ul>
+<li>1. 监听部分 onclick</li>
+<li>2. 初始化 initial 将四个 frgment 压入 content</li>
+<li>3. 隐藏四个 tab 界面 fragmenthide</li>
+<li>4. 展示一个 tab 界面 fragmentshow</li>
+</ul>
+<h5 id="onclick函数"><a class="markdownIt-Anchor" href="#onclick函数">#</a> onclick 函数</h5>
+<ul>
+<li>
+<p>[注] 在写 onclick 函数前要对 tab 四个页面监听，根据结果返回 fragment 界面</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">linearLayout1.setOnClickListener(<span class="hljs-built_in">this</span>);<br>        linearLayout2.setOnClickListener(<span class="hljs-built_in">this</span>);<br>        linearLayout3.setOnClickListener(<span class="hljs-built_in">this</span>);<br>        linearLayout4.setOnClickListener(<span class="hljs-built_in">this</span>);<br></code></pre></td></tr></table></figure>
+<ul>
+<li>设置监听后，对主函数也要进行修改</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AppCompatActivity</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">View</span>.OnClickListener&#123;&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View view)</span> &#123;<br>        fragmenthide();<br>        <span class="hljs-keyword">if</span> (view.getId()==R.id.chat)&#123;<br>            fragmentshow(fragment1);<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (view.getId()==R.id.friend)&#123;<br>            fragmentshow(fragment2);<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (view.getId()==R.id.finding)&#123;<br>            fragmentshow(fragment3);<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(view.getId()==R.id.setting)&#123;<br>            fragmentshow(fragment4);<br>        &#125;<br>    &#125;<br></code></pre></td></tr></table></figure>
+<h5 id="initial函数"><a class="markdownIt-Anchor" href="#initial函数">#</a> initial 函数</h5>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">initial</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">FragmentTransaction</span> <span class="hljs-variable">ft</span> <span class="hljs-operator">=</span> fm.beginTransaction()<br>                .add(R.id.content,fragment1)<br>                .add(R.id.content,fragment2)<br>                .add(R.id.content,fragment3)<br>                .add(R.id.content,fragment4);<br>        ft.commit();<br><br>    &#125;<br></code></pre></td></tr></table></figure>
+<h5 id="fragmenthide函数"><a class="markdownIt-Anchor" href="#fragmenthide函数">#</a> fragmenthide 函数</h5>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fragmenthide</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">FragmentTransaction</span> <span class="hljs-variable">ft</span> <span class="hljs-operator">=</span> fm.beginTransaction()<br>                .hide(fragment1)<br>                .hide(fragment2)<br>                .hide(fragment3)<br>                .hide(fragment4);<br>        ft.commit();<br>    &#125;<br></code></pre></td></tr></table></figure>
+<h5 id="fragmentshow函数"><a class="markdownIt-Anchor" href="#fragmentshow函数">#</a> fragmentshow 函数</h5>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fragmentshow</span><span class="hljs-params">(Fragment fragment)</span> &#123;<br><br>        <span class="hljs-type">FragmentTransaction</span> <span class="hljs-variable">transaction</span> <span class="hljs-operator">=</span> fm.beginTransaction()<br>                .show(fragment);<br>        transaction.commit();<br>    &#125;<br></code></pre></td></tr></table></figure>
+<h5 id="mainactivityjava所有代码"><a class="markdownIt-Anchor" href="#mainactivityjava所有代码">#</a> MainActivity.java 所有代码</h5>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.example.mychat;<br><br><span class="hljs-keyword">import</span> androidx.appcompat.app.AppCompatActivity;<br><span class="hljs-keyword">import</span> androidx.fragment.app.Fragment;<br><span class="hljs-keyword">import</span> androidx.fragment.app.FragmentManager;<br><span class="hljs-keyword">import</span> androidx.fragment.app.FragmentTransaction;<br><br><span class="hljs-keyword">import</span> android.os.Bundle;<br><span class="hljs-keyword">import</span> android.view.View;<br><span class="hljs-keyword">import</span> android.widget.LinearLayout;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AppCompatActivity</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">View</span>.OnClickListener&#123;<br>    Fragment fragment1,fragment2,fragment3,fragment4;<br>    FragmentManager fm;<br>    LinearLayout linearLayout1,linearLayout2,linearLayout3,linearLayout4;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> &#123;<br>        <span class="hljs-built_in">super</span>.onCreate(savedInstanceState);<br>        setContentView(R.layout.activity_main);<br>        fragment1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Fragment1</span>();<br>        fragment2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Fragment2</span>();<br>        fragment3 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Fragment3</span>();<br>        fragment4 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Fragment4</span>();<br>        fm = getSupportFragmentManager();<br><br>        linearLayout1 = findViewById(R.id.chat);<br>        linearLayout2 = findViewById(R.id.friend);<br>        linearLayout3 = findViewById(R.id.finding);<br>        linearLayout4 = findViewById(R.id.setting);<br><br>        initial();<br>        fragmenthide();<br>        fragmentshow(fragment1);<br>        linearLayout1.setOnClickListener(<span class="hljs-built_in">this</span>);<br>        linearLayout2.setOnClickListener(<span class="hljs-built_in">this</span>);<br>        linearLayout3.setOnClickListener(<span class="hljs-built_in">this</span>);<br>        linearLayout4.setOnClickListener(<span class="hljs-built_in">this</span>);<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fragmenthide</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">FragmentTransaction</span> <span class="hljs-variable">ft</span> <span class="hljs-operator">=</span> fm.beginTransaction()<br>                .hide(fragment1)<br>                .hide(fragment2)<br>                .hide(fragment3)<br>                .hide(fragment4);<br>        ft.commit();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">initial</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">FragmentTransaction</span> <span class="hljs-variable">ft</span> <span class="hljs-operator">=</span> fm.beginTransaction()<br>                .add(R.id.content,fragment1)<br>                .add(R.id.content,fragment2)<br>                .add(R.id.content,fragment3)<br>                .add(R.id.content,fragment4);<br>        ft.commit();<br><br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View view)</span> &#123;<br>        fragmenthide();<br>        <span class="hljs-keyword">if</span> (view.getId()==R.id.chat)&#123;<br>            fragmentshow(fragment1);<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (view.getId()==R.id.friend)&#123;<br>            fragmentshow(fragment2);<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (view.getId()==R.id.finding)&#123;<br>            fragmentshow(fragment3);<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(view.getId()==R.id.setting)&#123;<br>            fragmentshow(fragment4);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fragmentshow</span><span class="hljs-params">(Fragment fragment)</span> &#123;<br><br>        <span class="hljs-type">FragmentTransaction</span> <span class="hljs-variable">transaction</span> <span class="hljs-operator">=</span> fm.beginTransaction()<br>                .show(fragment);<br>        transaction.commit();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="结果展示"><a class="markdownIt-Anchor" href="#结果展示">#</a> 结果展示</h2>
+<p><img data-src="https://s2.loli.net/2023/10/08/uKSk3gtTJmhvXy6.png" alt="图片.png"></p>
+<p><img data-src="https://s2.loli.net/2023/10/08/lixAsTjGmvkqapn.png" alt="1f3874fcf12584bd84e39bfab79852f.png"></p>
+<p><img data-src="https://s2.loli.net/2023/10/08/zI3yDwFsZU29a8E.png" alt="eaf05344cd676740a412fb33fa42cd1.png"></p>
+<p><img data-src="https://s2.loli.net/2023/10/08/PZQrOxfcE2oaXJh.png" alt="1a012628e7c150e522ba4a29e4d6404.png"></p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结">#</a> 总结</h2>
+<p>本次实验，学会利用 AS 进行制作简易的微信界面，掌握 fragment，layout，xml 和相关控件的知识，实现页面的跳转功能，在实验中我遇到一个头疼的问题，我写完了代码没报错但是允许就是闪退，看了 logcat 中的报错才知道 fragment 的类要声明为 public，也算是吃一堑长一智啦 (＾－＾)！</p>
+<h2 id="源码地址"><a class="markdownIt-Anchor" href="#源码地址">#</a> 源码地址</h2>
+
+      <div class="tags">
+          <a href="/tags/android-studio/" rel="tag"><i class="ic i-tag"></i> android studio</a>
+          <a href="/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/" rel="tag"><i class="ic i-tag"></i> 安卓开发</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2023-10-08 10:49:09" itemprop="dateModified" datetime="2023-10-08T10:49:09+08:00">2023-10-08</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Drizzle 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="Drizzle 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="Drizzle 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Drizzle <i class="ic i-at"><em>@</em></i>Hexo
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2023/10/07/AS%E5%88%B6%E4%BD%9C%E7%AE%80%E6%98%93%E5%BE%AE%E4%BF%A1/" title="AS制作简易微信">http://example.com/2023/10/07/AS制作简易微信/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/09/27/MoeCTF-WP/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipesng5oej20zk0m87d4.jpg" title="MoeCTF-WEB">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> CTF-WEB</span>
+  <h3>MoeCTF-WEB</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#as-%E5%88%B6%E4%BD%9C%E7%AE%80%E6%98%93%E5%BE%AE%E4%BF%A1"><span class="toc-number">1.</span> <span class="toc-text"> AS 制作简易微信</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-number">1.1.</span> <span class="toc-text"> 实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text"> 实验过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 基本框架实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#top%E6%A0%8F%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> top 栏设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bottom%E6%A0%8F"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> bottom 栏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tab%E9%A1%B5%E9%9D%A2"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> tab 页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#main-activity"><span class="toc-number">1.2.1.4.</span> <span class="toc-text"> main-activity</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E6%95%88%E6%9E%9C%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 切换效果的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fragment%E7%B1%BB"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> fragment 类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mainactivity"><span class="toc-number">1.2.2.2.</span> <span class="toc-text"> MainActivity</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#onclick%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.2.2.1.</span> <span class="toc-text"> onclick 函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#initial%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.2.2.2.</span> <span class="toc-text"> initial 函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#fragmenthide%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.2.2.3.</span> <span class="toc-text"> fragmenthide 函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#fragmentshow%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.2.2.4.</span> <span class="toc-text"> fragmentshow 函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mainactivityjava%E6%89%80%E6%9C%89%E4%BB%A3%E7%A0%81"><span class="toc-number">1.2.2.2.5.</span> <span class="toc-text"> MainActivity.java 所有代码</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="toc-number">1.3.</span> <span class="toc-text"> 结果展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.4.</span> <span class="toc-text"> 总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E5%9C%B0%E5%9D%80"><span class="toc-number">1.5.</span> <span class="toc-text"> 源码地址</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/2023/10/07/AS%E5%88%B6%E4%BD%9C%E7%AE%80%E6%98%93%E5%BE%AE%E4%BF%A1/" rel="bookmark" title="AS制作简易微信">AS制作简易微信</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Drizzle"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Drizzle</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">5</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">6</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0RyaXp6bGUwNDI0MjU=" title="https:&#x2F;&#x2F;github.com&#x2F;Drizzle042425"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-user"></i>关于</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>aboutsite</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/admiration/" rel="section"><i class="ic i-coffee"></i>admiration</a>
+  </li>
+
+  </ul>
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF-WEB/" title="分类于 CTF-WEB">CTF-WEB</a>
+</div>
+
+    <span><a href="/2023/09/23/%E8%8F%9C%E7%8B%97%E6%9D%AFweb-WP/" title="菜狗杯WEB">菜狗杯WEB</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E9%AA%8C/" title="分类于 移动开发实验">移动开发实验</a>
+</div>
+
+    <span><a href="/2023/10/07/AS%E5%88%B6%E4%BD%9C%E7%AE%80%E6%98%93%E5%BE%AE%E4%BF%A1/" title="AS制作简易微信">AS制作简易微信</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF-reverse/" title="分类于 CTF-reverse">CTF-reverse</a>
+</div>
+
+    <span><a href="/2023/09/15/Reverse/" title="Reverse">Reverse</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/09/14/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF-WEB/" title="分类于 CTF-WEB">CTF-WEB</a>
+</div>
+
+    <span><a href="/2023/09/27/MoeCTF-WP/" title="MoeCTF-WEB">MoeCTF-WEB</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2022 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Drizzle @ Drizzle的狗窝</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">15k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">14 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/10/07/AS制作简易微信/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
