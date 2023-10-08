@@ -1,26 +1,20 @@
 <?xml version="1.0"?>
-<rss version="2.0">
-    <channel>
-        <title>Hexo</title>
-        <link>http://example.com</link>
-        <description></description>
-        <language>zh-CN</language>
-        <pubDate>Sat, 07 Oct 2023 23:28:43 +0800</pubDate>
-        <lastBuildDate>Sat, 07 Oct 2023 23:28:43 +0800</lastBuildDate>
-        <category>reverse</category>
-        <category>西电ctf</category>
-        <category>android studio</category>
-        <category>安卓开发</category>
-        <category>web</category>
-        <category>菜狗杯ctf</category>
-        <item>
-            <guid isPermalink="true">http://example.com/2023/10/07/AS%E7%AE%80%E6%98%93%E5%BE%AE%E4%BF%A1/</guid>
-            <title>AS制作简易微信</title>
-            <link>http://example.com/2023/10/07/AS%E7%AE%80%E6%98%93%E5%BE%AE%E4%BF%A1/</link>
-            <category>android studio</category>
-            <category>安卓开发</category>
-            <pubDate>Sat, 07 Oct 2023 23:28:43 +0800</pubDate>
-            <description><![CDATA[ &lt;hr&gt;
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>Hexo • Posts by &#34;android studio&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2023-10-07T15:28:43.000Z</updated>
+    <category term="reverse" />
+    <category term="西电ctf" />
+    <category term="android studio" />
+    <category term="安卓开发" />
+    <category term="web" />
+    <category term="菜狗杯ctf" />
+    <entry>
+        <id>http://example.com/2023/10/07/AS%E7%AE%80%E6%98%93%E5%BE%AE%E4%BF%A1/</id>
+        <title>AS制作简易微信</title>
+        <link rel="alternate" href="http://example.com/2023/10/07/AS%E7%AE%80%E6%98%93%E5%BE%AE%E4%BF%A1/"/>
+        <content type="html">&lt;hr&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;as-制作简易微信&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#as-制作简易微信&#34;&gt;#&lt;/a&gt; AS 制作简易微信&lt;/h1&gt;
 &lt;h2 id=&#34;实验目的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#实验目的&#34;&gt;#&lt;/a&gt; 实验目的&lt;/h2&gt;
@@ -101,123 +95,9 @@
 &lt;p&gt;本次实验，学会利用 AS 进行制作简易的微信界面，掌握 fragment，layout，xml 和相关控件的知识，实现页面的跳转功能，在实验中我遇到一个头疼的问题，我写完了代码没报错但是允许就是闪退，看了 logcat 中的报错才知道 fragment 的类要声明为 public，也算是吃一堑长一智啦 (＾－＾)！&lt;/p&gt;
 &lt;h2 id=&#34;源码地址&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#源码地址&#34;&gt;#&lt;/a&gt; 源码地址&lt;/h2&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL0RyaXp6bGUwNDI0MjUvQVM=&#34;&gt;https://github.com/Drizzle042425/AS&lt;/span&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2023/09/27/MoeCTF-WP/</guid>
-            <title>MoeCTF-WEB</title>
-            <link>http://example.com/2023/09/27/MoeCTF-WP/</link>
-            <category>reverse</category>
-            <category>西电ctf</category>
-            <pubDate>Wed, 27 Sep 2023 22:55:06 +0800</pubDate>
-            <description><![CDATA[ &lt;hr&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;moectf-web&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#moectf-web&#34;&gt;#&lt;/a&gt; MoeCTF-WEB&lt;/h1&gt;
-&lt;h2 id=&#34;1http&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1http&#34;&gt;#&lt;/a&gt; 1.http&lt;/h2&gt;
-&lt;p&gt;按题如图：&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/09/30/9VQHclbSwBLZETR.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;2web入门指北&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2web入门指北&#34;&gt;#&lt;/a&gt; 2.Web 入门指北&lt;/h2&gt;
-&lt;p&gt;解压后发现编码后是这样一个数字：&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;666&lt;/mn&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;61673&lt;/mn&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mn&gt;6257396&lt;/mn&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;5933526&lt;/mn&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mn&gt;6533637&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;62454&lt;/mn&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mn&gt;7662575666564739666257396&lt;/mn&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;5131524758316379596&lt;/mn&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;396&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;61474673624756755&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;3055684958303&lt;/mn&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;666c61673d6257396c5933526d6533637a62454e7662575666564739666257396c5131524758316379596c396a61474673624756755a3055684958303d
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;拿去 cyberchef 解码&lt;/p&gt;
-&lt;p&gt;先用 hex 再用 base64&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/09/30/cQajmFsqdounZJH.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/09/30/HiucnpXr1b3Texq.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;得到答案&lt;/p&gt;
-&lt;h2 id=&#34;3彼岸的flag&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3彼岸的flag&#34;&gt;#&lt;/a&gt; 3. 彼岸的 flag&lt;/h2&gt;
-&lt;p&gt;打开源码搜 moectf&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/09/30/KeEgymxNM64CsfY.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;4cookie&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4cookie&#34;&gt;#&lt;/a&gt; 4.cookie&lt;/h2&gt;
-&lt;p&gt;1️⃣下载题目给的附件：&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/09/28/IABm2jhir3nZ4vU.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;大概意思就是先注册然后登录获取 flag&lt;/p&gt;
-&lt;p&gt;2️⃣注册一个账号&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/09/28/7NBmHjczpxORaAW.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;我注册的是&lt;/p&gt;
-&lt;p&gt;{&lt;br&gt;
-“username”:“abc”,&lt;br&gt;
-“password”:“123456”&lt;br&gt;
-}&lt;/p&gt;
-&lt;p&gt;因为之前注册过了，所以显示已存在&lt;/p&gt;
-&lt;p&gt;3️⃣登录账号&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/09/28/HKolMYNTj4tc83B.png&#34; alt=&#34;image-20230927222826795.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;可以发现有个 token，是 base64 加密的，拿去解密看看&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/09/28/2AKbHRIC5zq693l.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;可以发现我们角色是 user，咱们改成 admin 再进行 base64 加密作为 token，再发包&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/09/28/tpZk8FN1ioDVhIH.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;得到 flag&lt;/p&gt;
-&lt;h2 id=&#34;5gasgasgas&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#5gasgasgas&#34;&gt;#&lt;/a&gt; 5.gas!gas!gas!&lt;/h2&gt;
-&lt;p&gt;根据题目信息，编写 python 脚本来处理方向控制和油门控制的选择，并快速提交，注意处理 Session 信息。一次不成功可以多尝试几次&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs plaintext&#34;&gt;import requests&lt;br&gt;import re&lt;br&gt;url = &amp;#x27;http://localhost:50727/&amp;#x27;&lt;br&gt;headers = &amp;#123;&amp;quot;Content-Type&amp;quot;:&amp;quot;application/x-www-form-urlencoded&amp;quot;&amp;#125;&lt;br&gt;s = requests.Session()&lt;br&gt;req_post = s.post(&lt;br&gt;    url=url,&lt;br&gt;    data=&amp;#x27;driver=q1&amp;amp;steering_control=0&amp;amp;throttle=2&amp;#x27;,&lt;br&gt;    headers=headers)&lt;br&gt;print(f&amp;#x27;cookies = &amp;#123;s.cookies&amp;#125;&amp;#x27;)&lt;br&gt;post_data = &amp;#x27;driver=q1jun&amp;amp;steering_control=0&amp;amp;throttle=2&amp;#x27;&lt;br&gt;print(re.findall(r&amp;#x27;&amp;lt;h3&amp;gt;&amp;lt;font color=&amp;quot;red&amp;quot;&amp;gt;(.*)&amp;lt;/font&amp;gt;&amp;lt;/h3&amp;gt;&amp;lt;/div&amp;gt;&amp;#x27;,req_post.text)[0])&lt;br&gt;req = req_post.text&lt;br&gt;steering_control = 0&lt;br&gt;throttle = 0&lt;br&gt;for _ in range(7):&lt;br&gt;    if &amp;#x27;弯道向左&amp;#x27; in req_post.text:&lt;br&gt;        steering_control = 1&lt;br&gt;    if &amp;#x27;弯道向右&amp;#x27; in req_post.text:&lt;br&gt;        steering_control = -1&lt;br&gt;    if &amp;#x27;弯道直行&amp;#x27; in req_post.text:&lt;br&gt;        steering_control = 0&lt;br&gt;    if &amp;#x27;保持这个速度&amp;#x27; in req_post.text:&lt;br&gt;        throttle = 1&lt;br&gt;    if &amp;#x27;抓地力太大了&amp;#x27; in req_post.text:&lt;br&gt;        throttle = 2&lt;br&gt;    if &amp;#x27;抓地力太小了&amp;#x27; in req_post.text:&lt;br&gt;        throttle = 0&lt;br&gt;    print(f&amp;#x27;&amp;#123;steering_control =&amp;#125;&amp;#x27;)&lt;br&gt;    print(f&amp;#x27;&amp;#123;throttle =&amp;#125;&amp;#x27;)&lt;br&gt;    req_post = s.post(&lt;br&gt;        url=url,&lt;br&gt;        data=f&amp;#x27;driver=q1&amp;amp;steering_control=&amp;#123;steering_control&amp;#125;&amp;amp;throttle=&amp;#123;throttle&amp;#125;&amp;#x27;,&lt;br&gt;        headers=headers&lt;br&gt;    )&lt;br&gt;    print(req_post.text)&lt;br&gt;    print(re.findall(r&amp;#x27;&amp;lt;h3&amp;gt;&amp;lt;font color=&amp;quot;red&amp;quot;&amp;gt;(.*)&amp;lt;/font&amp;gt;&amp;lt;/h3&amp;gt;&amp;lt;/div&amp;gt;&amp;#x27;,req_post.text)[0])&lt;br&gt;    print(f&amp;#x27;cookies = &amp;#123;s.cookies&amp;#125;&amp;#x27;)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/06/HFEdgPcTGLsCURk.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;6moe图床&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6moe图床&#34;&gt;#&lt;/a&gt; 6.moe 图床&lt;/h2&gt;
-&lt;p&gt;观察网页源代码&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;59&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs plaintext&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;br&gt;&amp;lt;html&amp;gt;&lt;br&gt;&amp;lt;head&amp;gt;&lt;br&gt;    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;&lt;br&gt;    &amp;lt;title&amp;gt;moe图床&amp;lt;/title&amp;gt;&lt;br&gt;&amp;lt;/head&amp;gt;&lt;br&gt;&amp;lt;body&amp;gt;&lt;br&gt;    &amp;lt;input type=&amp;quot;file&amp;quot; id=&amp;quot;fileInput&amp;quot;&amp;gt;&lt;br&gt;    &amp;lt;button onclick=&amp;quot;uploadFile()&amp;quot;&amp;gt;上传&amp;lt;/button&amp;gt;&lt;br&gt;    &amp;lt;div id=&amp;quot;uploadResult&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;br&gt;    &amp;lt;script&amp;gt;&lt;br&gt;        function uploadFile() &amp;#123;&lt;br&gt;            const fileInput = document.getElementById(&amp;#x27;fileInput&amp;#x27;);&lt;br&gt;            const file = fileInput.files[0];&lt;br&gt;            &lt;br&gt;            if (!file) &amp;#123;&lt;br&gt;                alert(&amp;#x27;请选择一个文件进行上传！&amp;#x27;);&lt;br&gt;                return;&lt;br&gt;            &amp;#125;&lt;br&gt;            &lt;br&gt;            const allowedExtensions = [&amp;#x27;png&amp;#x27;];&lt;br&gt;            const fileExtension = file.name.split(&amp;#x27;.&amp;#x27;).pop().toLowerCase();&lt;br&gt;            if (!allowedExtensions.includes(fileExtension)) &amp;#123;&lt;br&gt;                alert(&amp;#x27;只允许上传后缀名为png的文件！&amp;#x27;);&lt;br&gt;                return;&lt;br&gt;            &amp;#125;&lt;br&gt;            &lt;br&gt;            const formData = new FormData();&lt;br&gt;            formData.append(&amp;#x27;file&amp;#x27;, file);&lt;br&gt;&lt;br&gt;            fetch(&amp;#x27;upload.php&amp;#x27;, &amp;#123;&lt;br&gt;                method: &amp;#x27;POST&amp;#x27;,&lt;br&gt;                body: formData&lt;br&gt;            &amp;#125;)&lt;br&gt;            .then(response =&amp;gt; response.json())&lt;br&gt;            .then(result =&amp;gt; &amp;#123;&lt;br&gt;                if (result.success) &amp;#123;&lt;br&gt;                    const uploadResult = document.getElementById(&amp;#x27;uploadResult&amp;#x27;);&lt;br&gt;                    const para = document.createElement(&amp;#x27;p&amp;#x27;);&lt;br&gt;                    para.textContent = (&amp;#x27;地址：&amp;#x27;);&lt;br&gt;                    const link = document.createElement(&amp;#x27;a&amp;#x27;);&lt;br&gt;                    link.textContent = result.file_path;&lt;br&gt;                    link.href = result.file_path;&lt;br&gt;                    link.target = &amp;#x27;_blank&amp;#x27;;&lt;br&gt;                    para.append(link);&lt;br&gt;                    uploadResult.appendChild(para);&lt;br&gt;&lt;br&gt;                    alert(&amp;#x27;文件上传成功！&amp;#x27;);&lt;br&gt;                &amp;#125; else &amp;#123;&lt;br&gt;                    alert(&amp;#x27;文件上传失败：&amp;#x27; + result.message);&lt;br&gt;                &amp;#125;&lt;br&gt;            &amp;#125;)&lt;br&gt;            .catch(error =&amp;gt; &amp;#123;&lt;br&gt;                console.error(&amp;#x27;文件上传失败:&amp;#x27;, error);&lt;br&gt;            &amp;#125;);&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;lt;/script&amp;gt;&lt;br&gt;&amp;lt;/body&amp;gt;&lt;br&gt;&amp;lt;/html&amp;gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;可以发现只允许上传.png 后缀名的文件&lt;/p&gt;
-&lt;p&gt;利用 burpsuite 抓包可以修改文件类型&lt;/p&gt;
-&lt;p&gt;先随便上传一个符合上传格式的 png 文件，再修改数据包内容&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/06/koRPuA2ilOpjeMm.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;此时我们要将文件名 filename 改为包含.png 的文件&lt;/p&gt;
-&lt;p&gt;我这里写的 shell.php.png.php 脚本的内容：&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs plaintext&#34;&gt;&amp;lt;?php system(&amp;#x27;cat /flag&amp;#x27;);?&amp;gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;上传成功后，访问文件：&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/06/xXmeVH73BDRwd2a.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2023/09/23/%E8%8F%9C%E7%8B%97%E6%9D%AFweb-WP/</guid>
-            <title>菜狗杯WEB</title>
-            <link>http://example.com/2023/09/23/%E8%8F%9C%E7%8B%97%E6%9D%AFweb-WP/</link>
-            <category>web</category>
-            <category>菜狗杯ctf</category>
-            <pubDate>Sat, 23 Sep 2023 22:55:06 +0800</pubDate>
-            <description><![CDATA[ &lt;hr&gt;
-&lt;hr&gt;
-&lt;p&gt;菜狗杯 web-WP&lt;/p&gt;
-&lt;p&gt;1.web 签到&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2023/09/15/Reverse/</guid>
-            <title>Reverse</title>
-            <link>http://example.com/2023/09/15/Reverse/</link>
-            <category>reverse</category>
-            <category>西电ctf</category>
-            <pubDate>Fri, 15 Sep 2023 22:55:06 +0800</pubDate>
-            <description><![CDATA[ &lt;hr&gt;
-&lt;hr&gt;
-&lt;p&gt;step1: 下载解压后是 pyc 文件，上网查询在线反编译工具，得到 python 代码.&lt;br&gt;
-step2:&lt;br&gt;
- 解读 python 代码，上网查询 translate 和 maketrans 的用法，&lt;br&gt;
-① s.translate (table,str) 对字符串 s 移除 str 包含的字符，剩下的字符串按照 table 里的字符映射关系替换。table 可以理解为转换表，比较’a’ -&amp;gt; ‘A’, ‘b’-&amp;gt;‘B’.&lt;/p&gt;
-&lt;p&gt;② tabel = string.maketrans (‘s1’, ‘s2’) s1 和 s2 的长度必须一致，maketrans 生成一个转换表，若在 s 中有 s1，则替换为 s2，这个转换表是字符字符一个个对应的，没必要全部包含。&lt;br&gt;
-原文链接：&lt;/p&gt;
-&lt;p&gt;[&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNDA3OTMwNy9hcnRpY2xlL2RldGFpbHMvMTE0OTM4OTUw&#34;&gt;https://blog.csdn.net/weixin_34079307/article/details/114938950&lt;/span&gt;]:&lt;/p&gt;
-&lt;p&gt;step3: 所以源代码表示的就是讲 enc_flag 按照（string1，string2）的转换表，把 str1 进行转换&lt;br&gt;
- step4：最后进行 base64 解码得到答案&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2023/09/14/hello-world/</guid>
-            <title>Hello World</title>
-            <link>http://example.com/2023/09/14/hello-world/</link>
-            <pubDate>Thu, 14 Sep 2023 23:24:53 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;Welcome to &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvLw==&#34;&gt;Hexo&lt;/span&gt;! This is your very first post. Check &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv&#34;&gt;documentation&lt;/span&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=&#34;&gt;troubleshooting&lt;/span&gt; or you can ask me on &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==&#34;&gt;GitHub&lt;/span&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
-&lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;$ hexo new &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;My New Post&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s&#34;&gt;Writing&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;run-server&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#run-server&#34;&gt;#&lt;/a&gt; Run server&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;$ hexo server&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=&#34;&gt;Server&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;generate-static-files&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#generate-static-files&#34;&gt;#&lt;/a&gt; Generate static files&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;$ hexo generate&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s&#34;&gt;Generating&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;deploy-to-remote-sites&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#deploy-to-remote-sites&#34;&gt;#&lt;/a&gt; Deploy to remote sites&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;$ hexo deploy&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s&#34;&gt;Deployment&lt;/span&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-    </channel>
-</rss>
+</content>
+        <category term="android studio" />
+        <category term="安卓开发" />
+        <updated>2023-10-07T15:28:43.000Z</updated>
+    </entry>
+</feed>
