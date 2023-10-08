@@ -100,6 +100,7 @@
 &lt;h2 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;#&lt;/a&gt; 总结&lt;/h2&gt;
 &lt;p&gt;本次实验，学会利用 AS 进行制作简易的微信界面，掌握 fragment，layout，xml 和相关控件的知识，实现页面的跳转功能，在实验中我遇到一个头疼的问题，我写完了代码没报错但是允许就是闪退，看了 logcat 中的报错才知道 fragment 的类要声明为 public，也算是吃一堑长一智啦 (＾－＾)！&lt;/p&gt;
 &lt;h2 id=&#34;源码地址&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#源码地址&#34;&gt;#&lt;/a&gt; 源码地址&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL0RyaXp6bGUwNDI0MjUvQVM=&#34;&gt;https://github.com/Drizzle042425/AS&lt;/span&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
