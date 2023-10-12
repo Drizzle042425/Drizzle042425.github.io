@@ -6,9 +6,10 @@
     <updated>2023-10-07T15:28:43.000Z</updated>
     <category term="android studio" />
     <category term="安卓开发" />
+    <category term="web" />
+    <category term="newstarctf" />
     <category term="reverse" />
     <category term="西电ctf" />
-    <category term="web" />
     <category term="菜狗杯ctf" />
     <entry>
         <id>http://example.com/2023/10/07/AS%E7%AE%80%E6%98%93%E5%BE%AE%E4%BF%A1/</id>
@@ -17,9 +18,18 @@
         <content type="html">&lt;hr&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;as-制作简易微信&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#as-制作简易微信&#34;&gt;#&lt;/a&gt; AS 制作简易微信&lt;/h1&gt;
-&lt;h2 id=&#34;实验目的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#实验目的&#34;&gt;#&lt;/a&gt; 实验目的&lt;/h2&gt;
+&lt;h2 id=&#34;作业目标&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#作业目标&#34;&gt;#&lt;/a&gt; 作业目标&lt;/h2&gt;
 &lt;p&gt;利用 android studio 制作一个类微信页面的框架，包含上中下布局，四个 tab 页面，点击底部按钮实现跳转功能&lt;/p&gt;
-&lt;h2 id=&#34;实验过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#实验过程&#34;&gt;#&lt;/a&gt; 实验过程&lt;/h2&gt;
+&lt;h2 id=&#34;技术说明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#技术说明&#34;&gt;#&lt;/a&gt; 技术说明&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Android Studio&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pixel 3a API 34&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;关键代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关键代码&#34;&gt;#&lt;/a&gt; 关键代码&lt;/h2&gt;
 &lt;h3 id=&#34;基本框架实现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本框架实现&#34;&gt;#&lt;/a&gt; 基本框架实现&lt;/h3&gt;
 &lt;p&gt;准备工作：导入所需图片到 drawable 目录下：&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/07/Zx3UX21GiCYcarI.png&#34; alt=&#34;图片.png&#34;&gt;&lt;/p&gt;

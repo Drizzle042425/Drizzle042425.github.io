@@ -367,14 +367,14 @@ const mediaPlayer = function(t, config) {
               list.push.apply(list, JSON.parse(playlist));
               resolve(list);
             } else {
-              fetch('https://api.i-meto.com/meting/api?server='+meta[0]+'&type='+meta[1]+'&id='+meta[2]+'&r='+ Math.random())
-                .then(function(response) {
-                  return response.json()
-                }).then(function(json) {
-                  store.set(skey, JSON.stringify(json))
-                  list.push.apply(list, json);
-                  resolve(list);
-                }).catch(function(ex) {})
+              fetch('https://api.injahow.cn/meting/?server=' + meta[0] + '&type=' + meta[1] + '&id=' + meta[2] + '&r=' + Math.random())
+  .then(function (response) {
+    return response.json()
+  }).then(function (json) {
+    store.set(skey, JSON.stringify(json))
+    list.push.apply(list, json);
+    resolve(list);
+  }).catch(function (ex) { })
             }
           } else {
             list.push(raw);

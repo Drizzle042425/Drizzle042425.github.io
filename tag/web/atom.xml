@@ -3,13 +3,70 @@
     <id>http://example.com</id>
     <title>雨 • Posts by &#34;web&#34; tag</title>
     <link href="http://example.com" />
-    <updated>2023-09-23T14:55:06.000Z</updated>
+    <updated>2023-10-11T05:45:30.053Z</updated>
     <category term="android studio" />
     <category term="安卓开发" />
+    <category term="web" />
+    <category term="newstarctf" />
     <category term="reverse" />
     <category term="西电ctf" />
-    <category term="web" />
     <category term="菜狗杯ctf" />
+    <entry>
+        <id>http://example.com/2023/10/11/NewStarCTF-WEB/</id>
+        <title>NewStarCTF-WEB</title>
+        <link rel="alternate" href="http://example.com/2023/10/11/NewStarCTF-WEB/"/>
+        <content type="html">&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;泄露的秘密&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#泄露的秘密&#34;&gt;#&lt;/a&gt; 泄露的秘密&lt;/h2&gt;
+&lt;p&gt;考的就是敏感信息的泄露 题目提示两个&lt;/p&gt;
+&lt;p&gt;无非就最简单的三种&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.robots.txt
+
+2.www.zip
+
+3.index.php.swp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;当然我的做法就是直接用 dirmap-master 扫描了 得到了 robots.txt 和 www.zip 文件，访问拼接就得到了 flag 了&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/xQa41D2IqJ89PvR.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/bluETtRmCgXW5Q4.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/lAkjnvKB6WfXMEx.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;being-of-upload&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#being-of-upload&#34;&gt;#&lt;/a&gt; Being of upload&lt;/h2&gt;
+&lt;p&gt;考的就是绕过&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zby5jc2RuLm5ldC9zby9zZWFyY2g/cT0lRTUlQUUlQTIlRTYlODglQjclRTclQUIlQUYmYW1wO3NwbT0xMDAxLjIxMDEuMzAwMS43MDIw&#34;&gt;客户端&lt;/span&gt; JavaScript 检验 上传一句话木马修改文件名后缀就行了&lt;/p&gt;
+&lt;p&gt;一句话木马内容；&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;?php eval($_POST[1]);?&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/pClORVIknGyB5tW.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;得到文件路径 我们可以直接利用蚁剑一把梭 也可也 RCE&lt;/p&gt;
+&lt;p&gt;节省时间 我们直接使用 rce 访问路径 然后利用 POST 传参 1=system (‘cat /f*’);&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/qEwSlHPu2D3TGjA.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;being-of-http&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#being-of-http&#34;&gt;#&lt;/a&gt; Being of HTTP&lt;/h2&gt;
+&lt;p&gt;第一步：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/Hfn8kFQlB3DYiCj.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;get 传入 ctf 参数后：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/b5FhJ2QwKjACWgs.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;POST 传参 在源码得到得到传入的参数&lt;/p&gt;
+&lt;p&gt;Secret: base64_decode(bjN3c3Q0ckNURjIwMjNnMDAwMDBk)&lt;/p&gt;
+&lt;p&gt;解码得到 n3wst4rCTF2023g00000d&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs plaintext&#34;&gt;payload:secret=n3wst4rCTF2023g00000d&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/xpSh9cCi7L25svG.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;抓包修改 power 为 ctfer&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/ToM5nOQCXtFuhm1.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/NDxrb164etzlYUm.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;改 User-Agent 为 NewStarCTF2023&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/tHWGpdwmqvJ25R8.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3huLS1SZWZlcmVybmV3c3RhcmN0Zi1xbjYwYXU5MDNhLmNvbQ==&#34;&gt;改 Referer 为 newstarctf.com&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/Qa53orHBTZYfhyt.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;发现只能本地用户访问&lt;/p&gt;
+&lt;p&gt;这里测试三个就行 XFF client-ip X-Real-IP&lt;/p&gt;
+&lt;p&gt;发现 X-Real-IP 可行&lt;/p&gt;
+&lt;p&gt;我们添加 X-Real-IP：127.0.0.1 就可以了&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s2.loli.net/2023/10/11/QrFNou6ViUAEyRw.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+</content>
+        <category term="web" />
+        <category term="newstarctf" />
+        <updated>2023-10-11T05:45:30.053Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2023/09/23/%E8%8F%9C%E7%8B%97%E6%9D%AFweb-WP/</id>
         <title>菜狗杯WEB</title>
