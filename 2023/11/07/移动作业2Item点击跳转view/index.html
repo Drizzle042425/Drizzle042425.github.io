@@ -1,0 +1,568 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="雨" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="雨" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="雨" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="android studio,安卓开发" />
+
+
+<link rel="canonical" href="http://example.com/2023/11/07/%E7%A7%BB%E5%8A%A8%E4%BD%9C%E4%B8%9A2Item%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%ACview/">
+
+
+
+  <title>
+移动作业 2:Item 点击跳转 view - 移动开发实验 |
+Yume Shoka = 雨</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">移动作业 2:Item 点击跳转 view
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2023-11-07 10:24:34">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-11-07T10:24:34+08:00">2023-11-07</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>9.3k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>8 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://s2.loli.net/2023/10/09/mcFSolzBsry1XpI.jpg"></li>
+          <li class="item" data-background-image="https://s2.loli.net/2023/04/15/OUz3CxR6cTItVyZ.jpg"></li>
+          <li class="item" data-background-image="https://s2.loli.net/2023/10/09/QZ2NXiFSHkIja95.jpg"></li>
+          <li class="item" data-background-image="https://s2.loli.net/2023/04/15/9v1HJnfzDl8RKZ6.jpg"></li>
+          <li class="item" data-background-image="https://s2.loli.net/2023/04/19/ZVomaOYRAGSt7ML.jpg"></li>
+          <li class="item" data-background-image="https://s2.loli.net/2023/10/09/yS7cC9RiYXAwzqh.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E9%AA%8C/" itemprop="item" rel="index" title="分类于 移动开发实验"><span itemprop="name">移动开发实验</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/07/%E7%A7%BB%E5%8A%A8%E4%BD%9C%E4%B8%9A2Item%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%ACview/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Drizzle">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="雨">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <hr>
+<hr>
+<h1 id="item点击跳转view"><a class="markdownIt-Anchor" href="#item点击跳转view">#</a> Item 点击跳转 view</h1>
+<h2 id="作业目标"><a class="markdownIt-Anchor" href="#作业目标">#</a> 作业目标</h2>
+<p>在作业一的基础上，将 recyclerView 的每个 item 增加点击功能，点击后跳转到一个新的 view 展示信息</p>
+<h2 id="技术说明"><a class="markdownIt-Anchor" href="#技术说明">#</a> 技术说明</h2>
+<ul>
+<li>Android Studio</li>
+<li>Pixel 3a API 34</li>
+<li>Adapter</li>
+<li>RecyclerView</li>
+</ul>
+<h2 id="关键代码"><a class="markdownIt-Anchor" href="#关键代码">#</a> 关键代码</h2>
+<h3 id="静态布局"><a class="markdownIt-Anchor" href="#静态布局">#</a> 静态布局</h3>
+<h4 id="新建tab02_itemxml文件"><a class="markdownIt-Anchor" href="#新建tab02_itemxml文件">#</a> 新建 tab02_item.xml 文件</h4>
+<p>在 layout 下新建一个 xml 文件，实现 recyclerview 中每个 item 的样式设计</p>
+<p><img data-src="https://s2.loli.net/2023/11/07/XrBtfJMLUkEOId1.png" alt="图片.png"></p>
+<h4 id="新建myadapter类"><a class="markdownIt-Anchor" href="#新建myadapter类">#</a> 新建 MyAdapter 类</h4>
+<p>创建 Adapter 类，将数据绑定到 recyclerview 中对应的 Item 上</p>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.example.mychat;<br><br><span class="hljs-keyword">import</span> android.content.Context;<br><span class="hljs-keyword">import</span> android.content.Intent;<br><span class="hljs-keyword">import</span> android.view.LayoutInflater;<br><span class="hljs-keyword">import</span> android.view.View;<br><span class="hljs-keyword">import</span> android.view.ViewGroup;<br><span class="hljs-keyword">import</span> android.widget.ImageView;<br><span class="hljs-keyword">import</span> android.widget.TextView;<br><br><span class="hljs-keyword">import</span> androidx.annotation.NonNull;<br><span class="hljs-keyword">import</span> androidx.recyclerview.widget.RecyclerView;<br><br><span class="hljs-keyword">import</span> java.util.List;<br><span class="hljs-keyword">import</span> java.util.Map;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyAdapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">RecyclerView</span>.Adapter &lt;MyAdapter.MyViewHolder&gt;&#123;<br>    <span class="hljs-comment">//定义存储数据和运行环境的变量</span><br>    <span class="hljs-keyword">private</span> List&lt;Map&lt;String,Object&gt;&gt; mydata;<br>    <span class="hljs-keyword">private</span> Context mycontext;<br><br>    <span class="hljs-comment">//获取数据和运行环境</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">MyAdapter</span><span class="hljs-params">(List&lt;Map&lt;String,Object&gt;&gt; data, Context context)</span>&#123;<br>        mydata=data;<br>        mycontext=context;<br>    &#125;<br><br>    <span class="hljs-meta">@NonNull</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> MyViewHolder <span class="hljs-title function_">onCreateViewHolder</span><span class="hljs-params">(<span class="hljs-meta">@NonNull</span> ViewGroup parent, <span class="hljs-type">int</span> viewType)</span> &#123;<br>        View view= LayoutInflater.from(mycontext).inflate(R.layout.tab02_item,parent,<span class="hljs-literal">false</span>);<br>        MyViewHolder holder=<span class="hljs-keyword">new</span> <span class="hljs-title class_">MyViewHolder</span>(view);<br>        <span class="hljs-keyword">return</span> holder;<br>    &#125;<br><br>   <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onBindViewHolder</span><span class="hljs-params">(<span class="hljs-meta">@NonNull</span> MyAdapter.MyViewHolder holder, <span class="hljs-type">int</span> position)</span> &#123;<br>        <span class="hljs-comment">//获取点击位置的对应数据</span><br>        String name=mydata.get(position).get(<span class="hljs-string">&quot;i_name&quot;</span>).toString();<br>        <span class="hljs-type">int</span> image=Integer.parseInt(mydata.get(position).get(<span class="hljs-string">&quot;i_image&quot;</span>).toString());<br>        <span class="hljs-comment">//将此数据显示到item中</span><br>        holder.textView.setText(name);<br>        holder.imageView.setImageResource(image);<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getItemCount</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> mydata.size();<br>    &#125;<br>    <span class="hljs-keyword">public</span>  <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyViewHolder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">RecyclerView</span>.ViewHolder &#123;<br>        <span class="hljs-keyword">private</span> TextView textView;<br>        <span class="hljs-keyword">private</span> ImageView imageView;<br>        <span class="hljs-keyword">public</span> <span class="hljs-title function_">MyViewHolder</span><span class="hljs-params">(<span class="hljs-meta">@NonNull</span> View itemView)</span> &#123;<br>            <span class="hljs-built_in">super</span>(itemView);<br>            <span class="hljs-comment">//获取item中的控件id</span><br>            textView=itemView.findViewById(R.id.text_666);<br>            imageView=itemView.findViewById(R.id.image_666);<br>        &#125;<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="修改fragment2"><a class="markdownIt-Anchor" href="#修改fragment2">#</a> 修改 Fragment2</h4>
+<p>因为上次的列表效果不是很满意，这次进行重新的修改。同时也对 bottom 栏图标进行了更换，更美观囖。</p>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.example.mychat;<br><br><span class="hljs-keyword">import</span> android.content.Context;<br><span class="hljs-keyword">import</span> android.graphics.Color;<br><span class="hljs-keyword">import</span> android.os.Bundle;<br><span class="hljs-keyword">import</span> android.view.LayoutInflater;<br><span class="hljs-keyword">import</span> android.view.View;<br><span class="hljs-keyword">import</span> android.view.ViewGroup;<br><br><span class="hljs-keyword">import</span> androidx.annotation.NonNull;<br><span class="hljs-keyword">import</span> androidx.fragment.app.Fragment;<br><span class="hljs-keyword">import</span> androidx.recyclerview.widget.ItemTouchHelper;<br><span class="hljs-keyword">import</span> androidx.recyclerview.widget.LinearLayoutManager;<br><span class="hljs-keyword">import</span> androidx.recyclerview.widget.RecyclerView;<br><br><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.Collections;<br><span class="hljs-keyword">import</span> java.util.HashMap;<br><span class="hljs-keyword">import</span> java.util.List;<br><span class="hljs-keyword">import</span> java.util.Map;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Fragment2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Fragment</span> &#123;<br>    <span class="hljs-comment">//获取recyclerView对象并且实例化适配器</span><br>    <span class="hljs-keyword">private</span> RecyclerView recyclerView;<br>    <span class="hljs-keyword">private</span> MyAdapter myAdapter;<br><br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> View <span class="hljs-title function_">onCreateView</span><span class="hljs-params">(LayoutInflater inflater, ViewGroup container,</span><br><span class="hljs-params">                             Bundle savedInstanceState)</span> &#123;<br>        <span class="hljs-comment">// Inflate the layout for this fragment</span><br>        <span class="hljs-comment">//return inflater.inflate(R.layout.fra_lx, container, false);</span><br>        View view;<br>        <span class="hljs-comment">//存所有控件的视图</span><br>        view=inflater.inflate(R.layout.tab02, container, <span class="hljs-literal">false</span>);<br>        <span class="hljs-comment">//调用recycleview控件</span><br>        recyclerView=view.findViewById(R.id.recycleview);<br>        <span class="hljs-comment">//创建数据</span><br>        String[] names=&#123;<span class="hljs-string">&quot;Felicity&quot;</span>,<span class="hljs-string">&quot;Novocaine 2&quot;</span>,<span class="hljs-string">&quot;rainy road&quot;</span>,<span class="hljs-string">&quot;风（wind）&quot;</span>,<span class="hljs-string">&quot;Windy Hill&quot;</span>,<span class="hljs-string">&quot;至少还有你&quot;</span>,<span class="hljs-string">&quot;The rain ＆ lovers&quot;</span>,<span class="hljs-string">&quot;How Long&quot;</span>&#125;;<br>        <span class="hljs-type">int</span>[] images=&#123;R.drawable.no1, R.drawable.no2, R.drawable.no3, R.drawable.no4,R.drawable.no5,<br>                R.drawable.no6,R.drawable.no7,R.drawable.no8&#125;;<br>        String[] composer=&#123;<span class="hljs-string">&quot;Isaac Shepard&quot;</span>,<span class="hljs-string">&quot;Cloke/Shiloh Dynasty&quot;</span>,<span class="hljs-string">&quot;CHINESE&quot;</span>,<span class="hljs-string">&quot;陈越龙&quot;</span>,<span class="hljs-string">&quot;羽肿&quot;</span>,<br>                <span class="hljs-string">&quot;林忆莲&quot;</span>,<span class="hljs-string">&quot;The rain ＆ lovers&quot;</span>,<span class="hljs-string">&quot;Charlie Puth&quot;</span>&#125;;<br>        String[] album=&#123;<span class="hljs-string">&quot;Deep Joy&quot;</span>,<span class="hljs-string">&quot;Novocaine 2&quot;</span>,<span class="hljs-string">&quot;Rainy road&quot;</span>,<span class="hljs-string">&quot;Apr.四月&quot;</span>,<span class="hljs-string">&quot;Windy Hill&quot;</span>,<span class="hljs-string">&quot;爱的主题曲 十七岁的天空&quot;</span>,<span class="hljs-string">&quot;rainy days&quot;</span>,<br>                <span class="hljs-string">&quot;Voicenotes&quot;</span>&#125;;<br>        String[] tags=&#123;<span class="hljs-string">&quot;纯音乐&quot;</span>,<span class="hljs-string">&quot;静谧&quot;</span>,<span class="hljs-string">&quot;独白&quot;</span>,<span class="hljs-string">&quot;治愈&quot;</span>,<span class="hljs-string">&quot;轻音乐&quot;</span>,<br>                <span class="hljs-string">&quot;华语&quot;</span>,<span class="hljs-string">&quot;小众&quot;</span>,<span class="hljs-string">&quot;欧美&quot;</span>&#125;;<br>        List&lt;Map&lt;String,Object&gt;&gt; items=<span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;Map&lt;String,Object&gt;&gt;();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;names.length;i++)&#123;<br>            Map&lt;String,Object&gt; item=<span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;String, Object&gt;();<br>            item.put(<span class="hljs-string">&quot;i_name&quot;</span>,names[i]);<br>            item.put(<span class="hljs-string">&quot;i_image&quot;</span>,images[i]);<br>            item.put(<span class="hljs-string">&quot;i_songer&quot;</span>,composer[i]);<br>            item.put(<span class="hljs-string">&quot;i_song&quot;</span>,album[i]);<br>            item.put(<span class="hljs-string">&quot;i_tag&quot;</span>,tags[i]);<br>            items.add(item);<br>        &#125;<br>        <span class="hljs-comment">//创建RecycleView实例和设置Adapter</span><br>        Context context=getContext();<br>        myAdapter=<span class="hljs-keyword">new</span> <span class="hljs-title class_">MyAdapter</span>(items,context);<br>        LinearLayoutManager manager=<span class="hljs-keyword">new</span> <span class="hljs-title class_">LinearLayoutManager</span>(context);<br>        manager.setOrientation(recyclerView.VERTICAL);<br>        recyclerView.setLayoutManager(manager);<br>        recyclerView.setAdapter(myAdapter);<br><br>        <span class="hljs-comment">//实现拖拽和左滑删除效果</span><br>        ItemTouchHelper itemTouchHelper=<span class="hljs-keyword">new</span> <span class="hljs-title class_">ItemTouchHelper</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ItemTouchHelper</span>.Callback() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getMovementFlags</span><span class="hljs-params">(<span class="hljs-meta">@NonNull</span> RecyclerView recyclerView, <span class="hljs-meta">@NonNull</span> RecyclerView.ViewHolder viewHolder)</span> &#123;<br>                <span class="hljs-type">int</span> swiped=ItemTouchHelper.LEFT;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">dragFlags</span> <span class="hljs-operator">=</span> ItemTouchHelper.UP | ItemTouchHelper.DOWN;<br>                <span class="hljs-keyword">return</span> makeMovementFlags(dragFlags,swiped);<br>            &#125;<br><br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">onMove</span><span class="hljs-params">(<span class="hljs-meta">@NonNull</span> RecyclerView recyclerView, <span class="hljs-meta">@NonNull</span> RecyclerView.ViewHolder viewHolder, <span class="hljs-meta">@NonNull</span> RecyclerView.ViewHolder target)</span> &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">oldPosition</span> <span class="hljs-operator">=</span> viewHolder.getAdapterPosition();<br>                <span class="hljs-type">int</span> <span class="hljs-variable">newPosition</span> <span class="hljs-operator">=</span> target.getAdapterPosition();<br>                <span class="hljs-keyword">if</span> (oldPosition &lt; newPosition) &#123;<br>                    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> oldPosition; i &lt; newPosition; i++) &#123;<br>                        <span class="hljs-comment">// 改变数据集</span><br>                        Collections.swap(items, i, i +<span class="hljs-number">1</span>);<br>                    &#125;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> oldPosition; i &gt; newPosition; i--) &#123;<br>                        <span class="hljs-comment">// 改变数据集</span><br>                        Collections.swap(items, i, i - <span class="hljs-number">1</span>);<br>                    &#125;<br>                &#125;<br>                myAdapter.notifyItemMoved(oldPosition, newPosition);<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125;<br><br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onSwiped</span><span class="hljs-params">(<span class="hljs-meta">@NonNull</span> RecyclerView.ViewHolder viewHolder, <span class="hljs-type">int</span> direction)</span> &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">position</span> <span class="hljs-operator">=</span> viewHolder.getAdapterPosition();<br>                items.remove(position);<br>                myAdapter.notifyItemRemoved(position);<br>            &#125;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onSelectedChanged</span><span class="hljs-params">(RecyclerView.ViewHolder viewHolder, <span class="hljs-type">int</span> actionState)</span> &#123;<br>                <span class="hljs-keyword">if</span> (actionState!=ItemTouchHelper.ACTION_STATE_IDLE)&#123;<br>                    viewHolder.itemView.setBackgroundColor(Color.parseColor(<span class="hljs-string">&quot;#04BE02&quot;</span>));<br>                &#125;<br>            &#125;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">clearView</span><span class="hljs-params">(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder)</span> &#123;<br>                <span class="hljs-built_in">super</span>.clearView(recyclerView, viewHolder);<br>                viewHolder.itemView.setBackgroundColor(Color.TRANSPARENT);<br>            &#125;<br>        &#125;);<br>        <span class="hljs-comment">//关联recycleView</span><br>        itemTouchHelper.attachToRecyclerView(recyclerView);<br>        <span class="hljs-keyword">return</span> view;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>效果图：</p>
+<p><img data-src="https://s2.loli.net/2023/11/07/airKsLOWVDSBfkU.png" alt="图片.png"></p>
+<h3 id="item跳转实现"><a class="markdownIt-Anchor" href="#item跳转实现">#</a> item 跳转实现</h3>
+<h4 id="新建tab02_details"><a class="markdownIt-Anchor" href="#新建tab02_details">#</a> 新建 tab02_details</h4>
+<p>目的是实现各个 item 布局的页面展示</p>
+<p><img data-src="https://s2.loli.net/2023/11/07/uPWlXb9aZspB5jF.png" alt="图片.png"></p>
+<h4 id="修改myadapter类"><a class="markdownIt-Anchor" href="#修改myadapter类">#</a> 修改 MyAdapter 类</h4>
+<p>主要修改 onBindViewHolder 中的方法，其他地方不做更改</p>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onBindViewHolder</span><span class="hljs-params">(<span class="hljs-meta">@NonNull</span> MyAdapter.MyViewHolder holder, <span class="hljs-type">int</span> position)</span> &#123;<br>        String name=mydata.get(position).get(<span class="hljs-string">&quot;i_name&quot;</span>).toString();<br>        <span class="hljs-type">int</span> image=Integer.parseInt(mydata.get(position).get(<span class="hljs-string">&quot;i_image&quot;</span>).toString());<br>        <span class="hljs-comment">//获取详情页面中某个联系人的对应数据</span><br>        String songer=mydata.get(position).get(<span class="hljs-string">&quot;i_songer&quot;</span>).toString();<br>        String song=mydata.get(position).get(<span class="hljs-string">&quot;i_song&quot;</span>).toString();<br>        String tag=mydata.get(position).get(<span class="hljs-string">&quot;i_tag&quot;</span>).toString();<br>        holder.textView.setText(name);<br>        holder.imageView.setImageResource(image);<br>        <span class="hljs-comment">//添加点击事件</span><br>        holder.textView.setOnClickListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">View</span>.OnClickListener() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View v)</span> &#123;<br>                <span class="hljs-comment">//点击后跳转到联系人详情页</span><br>                Intent intent=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>(mycontext,Fragment2Detail.class);<br>                <span class="hljs-comment">//向intent传值</span><br>                intent.putExtra(<span class="hljs-string">&quot;details&quot;</span>,name);<br>                intent.putExtra(<span class="hljs-string">&quot;image&quot;</span>,image);<br>                intent.putExtra(<span class="hljs-string">&quot;songer&quot;</span>,songer);<br>                intent.putExtra(<span class="hljs-string">&quot;song&quot;</span>,song);<br>                intent.putExtra(<span class="hljs-string">&quot;tag&quot;</span>,tag);<br>                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);<br>                <span class="hljs-comment">//开始跳转</span><br>                mycontext.startActivity(intent);<br>            &#125;<br>        &#125;);<br>    &#125;<br></code></pre></td></tr></table></figure>
+<h4 id="新建fragment2detail的activity"><a class="markdownIt-Anchor" href="#新建fragment2detail的activity">#</a> 新建 Fragment2Detail 的 Activity</h4>
+<p>用来接收 Fragment2 的数据以传给 MyAdapter，获取 item 控件的值。</p>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.example.mychat;<br><br><span class="hljs-keyword">import</span> androidx.appcompat.app.AppCompatActivity;<br><br><span class="hljs-keyword">import</span> android.content.Intent;<br><span class="hljs-keyword">import</span> android.os.Bundle;<br><span class="hljs-keyword">import</span> android.widget.Button;<br><span class="hljs-keyword">import</span> android.widget.ImageView;<br><span class="hljs-keyword">import</span> android.widget.TextView;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Fragment2Detail</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AppCompatActivity</span> &#123;<br>    TextView dName,textView1,textView2,textView3;<br>    ImageView dImage;<br>    Button button_r;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> &#123;<br>        <span class="hljs-built_in">super</span>.onCreate(savedInstanceState);<br>        setContentView(R.layout.tab02_details);<br>        <span class="hljs-comment">//获取上一个Actvity传过来的intent</span><br>        Intent intent=getIntent();<br>        dName=findViewById(R.id.textDetail);<br>        dImage=findViewById((R.id.imageDetail));<br>        <span class="hljs-comment">//根据intent获取得到的数据设置item控件的值</span><br>        dImage.setImageResource(intent.getIntExtra(<span class="hljs-string">&quot;image&quot;</span>,R.drawable.wode));<br>        dName.setText(intent.getStringExtra(<span class="hljs-string">&quot;details&quot;</span>));<br>        textView1=findViewById(R.id.songer2);<br>        textView2=findViewById(R.id.song2);<br>        textView3=findViewById(R.id.wxtag2);<br>        textView1.setText(intent.getStringExtra(<span class="hljs-string">&quot;songer&quot;</span>));<br>        textView2.setText(intent.getStringExtra(<span class="hljs-string">&quot;song&quot;</span>));<br>        textView3.setText(intent.getStringExtra(<span class="hljs-string">&quot;tag&quot;</span>));<br>        button_r=findViewById(R.id.returnButton);<br>	    button_r.setOnClickListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">View</span>.OnClickListener() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View view)</span> &#123;<br>                <span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>();<br>                setResult(<span class="hljs-number">666</span>,intent);<br>                finish();<br>            &#125;<br>        &#125;);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="结果展示"><a class="markdownIt-Anchor" href="#结果展示">#</a> 结果展示</h2>
+<p><img data-src="https://s2.loli.net/2023/11/07/eX57G8HYJydzOjp.gif" alt="s.gif"></p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结">#</a> 总结</h2>
+<p>这次作业，主要利用自定义 MyAdapter 控件实现了对点击事件触发的页面跳转。通过设置 intent 对象进行跳转，传递上下两个 Activity，并设置返回值来进行两个 Activity 页面之间的跳转。注意在新建 Activity 类时，需要在 Manifest 文件中写注册信息，一开始我就没写，结果点击页面老是闪退。</p>
+<h2 id="源码地址"><a class="markdownIt-Anchor" href="#源码地址">#</a> 源码地址</h2>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0RyaXp6bGUwNDI0MjUvQVM=">https://github.com/Drizzle042425/AS</span></p>
+
+      <div class="tags">
+          <a href="/tags/android-studio/" rel="tag"><i class="ic i-tag"></i> android studio</a>
+          <a href="/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/" rel="tag"><i class="ic i-tag"></i> 安卓开发</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2023-11-07 12:00:58" itemprop="dateModified" datetime="2023-11-07T12:00:58+08:00">2023-11-07</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Drizzle <i class="ic i-at"><em>@</em></i>雨
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2023/11/07/%E7%A7%BB%E5%8A%A8%E4%BD%9C%E4%B8%9A2Item%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%ACview/" title="移动作业 2:Item 点击跳转 view">http://example.com/2023/11/07/移动作业2Item点击跳转view/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/10/11/NewStarCTF-WEB/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s2.loli.net&#x2F;2023&#x2F;04&#x2F;15&#x2F;uWBcj4vDNzhlw3m.jpg" title="NewStarCTF-WEB">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> CTF-WEB</span>
+  <h3>NewStarCTF-WEB</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#item%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%ACview"><span class="toc-number">1.</span> <span class="toc-text"> Item 点击跳转 view</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A%E7%9B%AE%E6%A0%87"><span class="toc-number">1.1.</span> <span class="toc-text"> 作业目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E8%AF%B4%E6%98%8E"><span class="toc-number">1.2.</span> <span class="toc-text"> 技术说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E4%BB%A3%E7%A0%81"><span class="toc-number">1.3.</span> <span class="toc-text"> 关键代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%B8%83%E5%B1%80"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 静态布局</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BAtab02_itemxml%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.1.1.</span> <span class="toc-text"> 新建 tab02_item.xml 文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BAmyadapter%E7%B1%BB"><span class="toc-number">1.3.1.2.</span> <span class="toc-text"> 新建 MyAdapter 类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9fragment2"><span class="toc-number">1.3.1.3.</span> <span class="toc-text"> 修改 Fragment2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#item%E8%B7%B3%E8%BD%AC%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.3.2.</span> <span class="toc-text"> item 跳转实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BAtab02_details"><span class="toc-number">1.3.2.1.</span> <span class="toc-text"> 新建 tab02_details</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9myadapter%E7%B1%BB"><span class="toc-number">1.3.2.2.</span> <span class="toc-text"> 修改 MyAdapter 类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BAfragment2detail%E7%9A%84activity"><span class="toc-number">1.3.2.3.</span> <span class="toc-text"> 新建 Fragment2Detail 的 Activity</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="toc-number">1.4.</span> <span class="toc-text"> 结果展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.5.</span> <span class="toc-text"> 总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E5%9C%B0%E5%9D%80"><span class="toc-number">1.6.</span> <span class="toc-text"> 源码地址</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2023/10/07/AS%E7%AE%80%E6%98%93%E5%BE%AE%E4%BF%A1/" rel="bookmark" title="移动作业1:AS制作简易微信">移动作业1:AS制作简易微信</a></li><li class="active"><a href="/2023/11/07/%E7%A7%BB%E5%8A%A8%E4%BD%9C%E4%B8%9A2Item%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%ACview/" rel="bookmark" title="移动作业2:Item点击跳转view">移动作业2:Item点击跳转view</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Drizzle"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Drizzle</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">7</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">7</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0RyaXp6bGUwNDI0MjU=" title="https:&#x2F;&#x2F;github.com&#x2F;Drizzle042425"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9kcml6emxlLTMzLTUx" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;drizzle-33-51"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTQ3NzA1OTM4MA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;477059380"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vdS82MTE4OTI0NDYz" title="https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;6118924463"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9hbWVoaW1l" title="https:&#x2F;&#x2F;about.me&#x2F;amehime"><i class="ic i-address-card"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOjMwMzMxMTMyNTZAcXEuY29t" title="mailto:3033113256@qq.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF-reverse/" title="分类于 CTF-reverse">CTF-reverse</a>
+</div>
+
+    <span><a href="/2023/09/15/Reverse/" title="Reverse">Reverse</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/09/14/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E9%AA%8C/" title="分类于 移动开发实验">移动开发实验</a>
+</div>
+
+    <span><a href="/2023/11/07/%E7%A7%BB%E5%8A%A8%E4%BD%9C%E4%B8%9A2Item%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%ACview/" title="移动作业2:Item点击跳转view">移动作业2:Item点击跳转view</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E9%AA%8C/" title="分类于 移动开发实验">移动开发实验</a>
+</div>
+
+    <span><a href="/2023/10/07/AS%E7%AE%80%E6%98%93%E5%BE%AE%E4%BF%A1/" title="移动作业1:AS制作简易微信">移动作业1:AS制作简易微信</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF-WEB/" title="分类于 CTF-WEB">CTF-WEB</a>
+</div>
+
+    <span><a href="/2023/09/23/%E8%8F%9C%E7%8B%97%E6%9D%AFweb-WP/" title="菜狗杯WEB">菜狗杯WEB</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF-WEB/" title="分类于 CTF-WEB">CTF-WEB</a>
+</div>
+
+    <span><a href="/2023/09/27/MoeCTF-WP/" title="MoeCTF-WEB">MoeCTF-WEB</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF-WEB/" title="分类于 CTF-WEB">CTF-WEB</a>
+</div>
+
+    <span><a href="/2023/10/11/NewStarCTF-WEB/" title="NewStarCTF-WEB">NewStarCTF-WEB</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Drizzle @ Yume Shoka</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">28k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">26 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/11/07/移动作业2Item点击跳转view/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,audio: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
